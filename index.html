@@ -1,0 +1,842 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>閱讀四階段筆記 ｜ 一座會帶你思考的書櫃</title>
+<meta name="description" content="77 本好書 × 四階段筆記 × 串聯式閱讀 × 知識地圖。不用全看，挑有感的就好。一起讀，走得更遠。">
+<!-- 分享預覽（請把下面兩個網址改成你實際的網址與封面圖網址，LINE／FB 才會顯示縮圖） -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="一座會帶你思考的書櫃 ｜ 閱讀四階段筆記">
+<meta property="og:description" content="77 本好書，整理成四階段筆記、串聯閱讀與知識地圖。挑你有感的那幾本就好，一起讀、走得更遠 🌱">
+<meta property="og:url" content="【貼上你的網址】">
+<meta property="og:image" content="【貼上你的封面圖網址】">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="一座會帶你思考的書櫃 ｜ 閱讀四階段筆記">
+<meta name="twitter:description" content="77 本好書 × 四階段筆記 × 知識地圖。挑有感的就好，一起讀、走得更遠 🌱">
+<meta name="twitter:image" content="【貼上你的封面圖網址】">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;500;600;700;900&family=Noto+Sans+TC:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#1c1a17; --ink-soft:#54504a; --paper:#f6f2ea; --card:#fffdf8;
+    --line:#e4ddd0; --accent:#9a3b2e; --accent-soft:#c4684f;
+    --s1:#7a5b1e; --s1bg:#f6edd8;
+    --s2:#2f6b54; --s2bg:#e4f0ea;
+    --s3:#3a5a87; --s3bg:#e6edf6;
+    --s4:#7c3b6e; --s4bg:#f3e6f0;
+    --shadow:0 1px 2px rgba(40,30,20,.05),0 8px 24px rgba(40,30,20,.06);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{
+    background:var(--paper);color:var(--ink);
+    font-family:"Noto Sans TC",system-ui,sans-serif;
+    line-height:1.75;font-weight:400;
+    background-image:radial-gradient(circle at 20% 0%,#fbf8f1 0,transparent 45%),
+                     radial-gradient(circle at 90% 10%,#f1ebdd 0,transparent 40%);
+    background-attachment:fixed;
+  }
+  .wrap{max-width:1100px;margin:0 auto;padding:0 22px}
+
+  header{padding:64px 0 30px}
+  .eyebrow{font-family:"Noto Serif TC",serif;letter-spacing:.32em;font-size:.72rem;
+    color:var(--accent);font-weight:600;text-transform:uppercase;margin-bottom:16px}
+  h1{font-family:"Noto Serif TC",serif;font-weight:900;font-size:clamp(2rem,5vw,3.1rem);
+    line-height:1.2;letter-spacing:.01em;margin-bottom:14px}
+  h1 .dim{color:var(--accent)}
+  .lead{max-width:680px;color:var(--ink-soft);font-size:1.02rem}
+  .lead b{color:var(--ink);font-weight:500}
+
+  /* 邀請語 */
+  .invite{max-width:640px;color:var(--ink-soft);font-size:1.04rem;line-height:1.9;margin-top:4px}
+  .invite b{color:var(--ink);font-weight:600}
+  .invite .soft{color:var(--accent);font-weight:500}
+  /* 30 秒上手 */
+  .how{display:flex;flex-wrap:wrap;align-items:center;gap:8px 14px;margin:22px 0 6px;
+    padding:14px 16px;background:var(--card);border:1px solid var(--line);border-radius:13px}
+  .how-t{font-family:"Noto Serif TC",serif;font-weight:700;color:var(--accent);font-size:.86rem;
+    border-right:1px solid var(--line);padding-right:13px;margin-right:2px}
+  .how .step{font-size:.85rem;color:var(--ink-soft)}
+  .how .step b{display:inline-flex;align-items:center;justify-content:center;width:19px;height:19px;
+    background:var(--accent);color:#fff;border-radius:50%;font-size:.72rem;margin-right:5px}
+  /* 互動按鈕 */
+  .actions{display:flex;flex-wrap:wrap;gap:10px;margin:16px 0 0}
+  .act-btn{font-family:inherit;font-size:.92rem;font-weight:600;border:1px solid var(--line);
+    background:var(--card);color:var(--ink);padding:11px 17px;border-radius:11px;cursor:pointer;
+    box-shadow:var(--shadow);transition:all .15s}
+  .act-btn:hover{border-color:var(--accent-soft);transform:translateY(-1px)}
+  .act-btn.primary{background:var(--accent);color:#fff;border-color:var(--accent)}
+  .act-btn.primary:hover{background:#86332791;filter:brightness(1.05)}
+  /* 痛點配書 */
+  .pain{margin-top:14px;background:#fbf3ea;border:1px solid #e8d6c2;border-radius:14px;padding:16px 18px}
+  .pain-hd{font-family:"Noto Serif TC",serif;font-weight:700;font-size:1rem;margin-bottom:12px}
+  .pain-opts{display:flex;flex-wrap:wrap;gap:8px}
+  .pain-opt{font-family:inherit;font-size:.86rem;border:1px solid #e0c9b3;background:#fff;
+    color:var(--ink);padding:8px 13px;border-radius:999px;cursor:pointer;transition:all .15s}
+  .pain-opt:hover{border-color:var(--accent);color:var(--accent)}
+  .pain-opt.on{background:var(--accent);color:#fff;border-color:var(--accent)}
+  .pain-result{margin-top:14px;padding-top:13px;border-top:1px dashed #e0c9b3}
+  .pain-result .pr-lbl{font-size:.82rem;color:var(--accent);font-weight:700;margin-bottom:9px;
+    font-family:"Noto Serif TC",serif}
+  .pr-books{display:flex;flex-direction:column;gap:8px}
+  .pr-book{display:flex;gap:11px;align-items:flex-start;background:#fff;border:1px solid #ece1cf;
+    border-radius:11px;padding:11px 13px;cursor:pointer;transition:all .15s;text-align:left}
+  .pr-book:hover{border-color:var(--accent);transform:translateY(-1px)}
+  .pr-book .prt{font-family:"Noto Serif TC",serif;font-weight:700;font-size:1rem}
+  .pr-book .pra{font-size:.76rem;color:var(--ink-soft)}
+  .pr-book .prc{font-size:.78rem;color:var(--ink-soft);margin-top:3px;line-height:1.5}
+
+  .lead{max-width:680px}
+
+  .legend{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:34px 0 8px}
+  .leg{border-radius:14px;padding:16px 16px 15px;border:1px solid var(--line);
+    background:var(--card);position:relative;overflow:hidden}
+  .leg::before{content:"";position:absolute;left:0;top:0;bottom:0;width:5px}
+  .leg.l1::before{background:var(--s1)} .leg.l2::before{background:var(--s2)}
+  .leg.l3::before{background:var(--s3)} .leg.l4::before{background:var(--s4)}
+  .leg .n{font-family:"Noto Serif TC",serif;font-size:.7rem;letter-spacing:.18em;
+    color:var(--ink-soft);font-weight:600}
+  .leg .t{font-family:"Noto Serif TC",serif;font-size:1.18rem;font-weight:700;margin:3px 0 6px}
+  .leg .d{font-size:.82rem;color:var(--ink-soft);line-height:1.5}
+
+  .controls{position:sticky;top:0;z-index:20;padding:18px 0 14px;margin-top:18px;
+    background:linear-gradient(var(--paper) 90%,rgba(246,242,234,0));}
+  .ctrow{display:flex;align-items:center;gap:10px;margin-bottom:12px;flex-wrap:wrap}
+  .viewtoggle{display:inline-flex;background:#eee6d8;border:1px solid var(--line);
+    border-radius:11px;padding:3px;gap:3px}
+  .vt{font-family:inherit;font-size:.86rem;font-weight:600;border:0;background:transparent;
+    color:var(--ink-soft);padding:7px 16px;border-radius:8px;cursor:pointer;transition:all .15s}
+  .vt:hover{color:var(--accent)}
+  .vt.on{background:var(--card);color:var(--ink);box-shadow:0 1px 3px rgba(40,30,20,.12)}
+  .fontctrl{margin-left:auto;display:inline-flex;gap:3px;background:#eee6d8;border:1px solid var(--line);
+    border-radius:10px;padding:3px}
+  .fb{font-family:"Noto Serif TC",serif;font-weight:700;border:0;background:transparent;color:var(--ink-soft);
+    padding:5px 11px;border-radius:7px;cursor:pointer;font-size:.84rem}
+  .fb:hover{background:var(--card);color:var(--accent)}
+  .searchbox{display:flex;align-items:center;gap:10px;background:var(--card);
+    border:1px solid var(--line);border-radius:13px;padding:11px 15px;box-shadow:var(--shadow)}
+  .searchbox svg{flex:0 0 auto;opacity:.5}
+  .searchbox input{border:0;outline:0;background:transparent;width:100%;
+    font-family:inherit;font-size:.98rem;color:var(--ink)}
+  .chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:13px;align-items:center}
+  .chip{font-family:inherit;font-size:.82rem;border:1px solid var(--line);background:var(--card);
+    color:var(--ink-soft);padding:6px 13px;border-radius:999px;cursor:pointer;
+    transition:all .15s;white-space:nowrap;font-weight:500}
+  .chip:hover{border-color:var(--accent-soft);color:var(--accent)}
+  .chip.on{background:var(--ink);color:#fff;border-color:var(--ink)}
+  .meta{margin-top:12px;font-size:.82rem;color:var(--ink-soft);display:flex;align-items:center;
+    gap:14px;flex-wrap:wrap}
+  .meta b{color:var(--accent);font-weight:600}
+  .meta .prog{color:#2f8a6e}
+  .meta .prog b{color:#1f5e4d}
+  .toolbtn{margin-left:auto;background:none;border:0;color:var(--ink-soft);
+    font-family:inherit;font-size:.82rem;cursor:pointer;text-decoration:underline;
+    text-underline-offset:3px}
+  .toolbtn:hover{color:var(--accent)}
+
+  .grid{display:grid;grid-template-columns:1fr;gap:14px;padding:6px 0 80px;scroll-margin-top:110px}
+  .book{background:var(--card);border:1px solid var(--line);border-radius:16px;
+    box-shadow:var(--shadow);overflow:hidden;transition:border-color .15s;scroll-margin-top:110px}
+  .book:hover{border-color:var(--accent-soft)}
+  .bhead{display:flex;align-items:flex-start;gap:16px;padding:20px 22px;cursor:pointer}
+  .bnum{font-family:"Noto Serif TC",serif;font-weight:700;color:var(--accent);
+    font-size:.95rem;min-width:2.2em;padding-top:3px}
+  .bmain{flex:1;min-width:0}
+  .btitle{font-family:"Noto Serif TC",serif;font-size:1.32rem;font-weight:700;line-height:1.35}
+  .bauthor{font-size:.85rem;color:var(--ink-soft);margin-top:2px}
+  .btag{display:inline-block;font-size:.72rem;font-weight:600;color:var(--accent);
+    background:#f4e7e2;border-radius:6px;padding:2px 9px;margin-top:9px;letter-spacing:.04em}
+  .begtag{display:inline-block;font-size:.72rem;font-weight:700;color:#1f5e4d;
+    background:#dcefe8;border-radius:6px;padding:2px 9px;margin-top:9px;margin-left:6px;letter-spacing:.04em}
+  .readtag{flex:0 0 auto;font-family:inherit;font-size:.76rem;font-weight:600;cursor:pointer;
+    border:1.5px solid var(--line);background:var(--card);color:var(--ink-soft);
+    border-radius:999px;padding:5px 12px;transition:all .15s;align-self:flex-start;white-space:nowrap}
+  .readtag:hover{border-color:#2f8a6e;color:#2f8a6e}
+  .book.read .readtag{background:#2f8a6e;border-color:#2f8a6e;color:#fff}
+  .book.read{border-color:#bfe0d4;background:#fbfefc}
+  .book.read .btitle{color:#1f5e4d}
+  .bcore{font-size:.92rem;color:var(--ink-soft);margin-top:11px;line-height:1.65}
+  .chev{flex:0 0 auto;transition:transform .25s;opacity:.45;margin-top:4px}
+  .book.open .chev{transform:rotate(180deg)}
+
+  .body{display:grid;grid-template-rows:0fr;transition:grid-template-rows .3s ease}
+  .book.open .body{grid-template-rows:1fr}
+  .body-inner{overflow:hidden}
+  .stages{padding:4px 22px 8px;display:grid;grid-template-columns:1fr 1fr;gap:13px}
+  .stage{border-radius:13px;padding:15px 16px 16px;border:1px solid transparent}
+  .stage.s1{background:var(--s1bg);border-color:#ecdfc2}
+  .stage.s2{background:var(--s2bg);border-color:#cfe3d9}
+  .stage.s3{background:var(--s3bg);border-color:#d5e0ef}
+  .stage.s4{background:var(--s4bg);border-color:#e6d3e1}
+  .shd{display:flex;align-items:baseline;gap:8px;margin-bottom:10px}
+  .sno{font-family:"Noto Serif TC",serif;font-weight:900;font-size:1.05rem}
+  .stage.s1 .sno{color:var(--s1)} .stage.s2 .sno{color:var(--s2)}
+  .stage.s3 .sno{color:var(--s3)} .stage.s4 .sno{color:var(--s4)}
+  .snm{font-family:"Noto Serif TC",serif;font-weight:700;font-size:1.02rem}
+  .seng{font-size:.68rem;letter-spacing:.1em;color:var(--ink-soft);font-weight:600}
+  .row{margin-bottom:9px;font-size:.9rem;line-height:1.62}
+  .row:last-child{margin-bottom:0}
+  .lbl{font-weight:700;color:var(--ink);font-size:.8rem;display:block;opacity:.78}
+  .quote{font-family:"Noto Serif TC",serif;font-weight:500;
+    border-left:3px solid currentColor;padding-left:11px;color:var(--s1)}
+  .pill{display:inline-block;background:rgba(255,255,255,.65);border-radius:7px;
+    padding:3px 10px;font-weight:600;font-family:"Noto Serif TC",serif}
+
+  /* 串聯式閱讀模組 */
+  .syn{margin:2px 22px 16px;border:1px solid #cfe0db;border-radius:14px;overflow:hidden;
+    background:linear-gradient(180deg,#eef6f3,#f7fbf9)}
+  .syn-top{display:flex;align-items:center;gap:9px;padding:13px 18px;background:#1f5e4d;color:#eafff7}
+  .syn-top .ic{flex:0 0 auto;opacity:.9}
+  .syn-top .st-t{font-family:"Noto Serif TC",serif;font-weight:700;font-size:1.04rem}
+  .syn-top .st-s{font-size:.74rem;opacity:.85;letter-spacing:.04em;margin-left:auto}
+  .syn-body{padding:16px 18px 18px}
+  .syn-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:14px}
+  .syn-card{background:#fff;border:1px solid #d8e7e1;border-radius:11px;padding:13px 15px}
+  .syn-card .h{display:flex;align-items:center;gap:7px;margin-bottom:8px}
+  .syn-card .h b{font-family:"Noto Serif TC",serif;font-size:.95rem;color:#1f5e4d;font-weight:700}
+  .syn-card .h .en{font-size:.64rem;letter-spacing:.1em;color:#6b8a80;font-weight:600}
+  .syn-pr{margin:0;padding:0;list-style:none}
+  .syn-pr li{position:relative;padding-left:18px;font-size:.88rem;line-height:1.55;margin-bottom:5px}
+  .syn-pr li:last-child{margin-bottom:0}
+  .syn-pr li::before{content:"";position:absolute;left:2px;top:.62em;width:6px;height:6px;
+    border-radius:50%;background:#2f8a6e}
+  .syn-fw{font-size:.9rem;line-height:1.6;color:var(--ink)}
+  .syn-fw .badge{display:inline-block;background:#dcefe8;color:#1f5e4d;font-weight:600;
+    border-radius:6px;padding:1px 8px;font-size:.72rem;margin-bottom:7px;font-family:"Noto Serif TC",serif;
+    letter-spacing:.05em}
+  .syn-act{background:#fff;border:1px solid #d8e7e1;border-radius:11px;padding:13px 15px;margin-bottom:14px}
+  .syn-act .h{display:flex;align-items:center;gap:7px;margin-bottom:9px}
+  .syn-act .h b{font-family:"Noto Serif TC",serif;font-size:.95rem;color:#1f5e4d;font-weight:700}
+  .syn-act .h .en{font-size:.64rem;letter-spacing:.1em;color:#6b8a80;font-weight:600}
+  .checks{display:grid;gap:7px}
+  .ck{display:flex;align-items:flex-start;gap:10px;font-size:.89rem;line-height:1.5;cursor:pointer;user-select:none}
+  .ck .box{flex:0 0 auto;width:18px;height:18px;border:2px solid #9cc3b8;border-radius:5px;
+    margin-top:2px;display:flex;align-items:center;justify-content:center;transition:all .15s}
+  .ck .box svg{opacity:0;transition:opacity .15s}
+  .ck.done .box{background:#2f8a6e;border-color:#2f8a6e}
+  .ck.done .box svg{opacity:1}
+  .ck.done .txt{text-decoration:line-through;color:var(--ink-soft);opacity:.65}
+  .syn-link{background:#f4efe6;border:1px solid #e6dcc9;border-radius:11px;
+    padding:12px 15px;font-size:.87rem;line-height:1.62;color:var(--ink-soft);margin-bottom:13px}
+  .syn-link .h{font-family:"Noto Serif TC",serif;font-weight:700;color:var(--accent);
+    font-size:.82rem;display:block;margin-bottom:4px}
+  .syn-sum{display:flex;align-items:center;gap:12px;background:#1f5e4d;color:#eafff7;
+    border-radius:11px;padding:13px 16px}
+  .syn-sum .k{font-family:"Noto Serif TC",serif;font-weight:700;font-size:.72rem;
+    letter-spacing:.14em;opacity:.8;flex:0 0 auto}
+  .syn-sum .v{font-family:"Noto Serif TC",serif;font-weight:700;font-size:1.05rem;line-height:1.45}
+
+  .recs{padding:0 22px 22px}
+  .recs-hd{display:flex;align-items:baseline;gap:8px;margin:6px 0 11px}
+  .recs-hd .ico{color:var(--accent);position:relative;top:3px}
+  .recs-hd .t{font-family:"Noto Serif TC",serif;font-weight:700;font-size:1.02rem}
+  .recs-hd .sub{font-size:.76rem;color:var(--ink-soft)}
+  .reclist{display:grid;grid-template-columns:1fr 1fr;gap:9px}
+  .rec{display:flex;gap:11px;align-items:flex-start;background:#fbf6ee;
+    border:1px solid #ece1cf;border-radius:11px;padding:11px 13px}
+  .rec .rk{font-family:"Noto Serif TC",serif;font-weight:900;color:var(--accent-soft);
+    font-size:1.02rem;line-height:1.4;min-width:1.1em}
+  .rec .info{flex:1;min-width:0}
+  .rec .rt{font-family:"Noto Serif TC",serif;font-weight:700;font-size:1rem;line-height:1.35}
+  .rec .ra{font-size:.78rem;color:var(--ink-soft);margin-top:1px}
+  .rec .rw{font-size:.78rem;color:var(--accent);margin-top:4px}
+  .rec .rw::before{content:"\21B3 "}
+
+  .note{background:#fbf3ea;border:1px dashed #e0c9b3;border-radius:13px;
+    padding:14px 18px;margin:8px 0 4px;font-size:.86rem;color:var(--ink-soft);line-height:1.65}
+  .note b{color:var(--accent)}
+  /* 節點總覽檢視 */
+  .grid.mapmode{display:block}
+  .node{margin-bottom:16px;border:1px solid var(--line);border-radius:16px;
+    background:var(--card);overflow:hidden;box-shadow:var(--shadow)}
+  .node-hd{padding:16px 20px 14px;border-bottom:1px solid var(--line);
+    position:relative}
+  .node-hd::before{content:"";position:absolute;left:0;top:0;bottom:0;width:6px;background:var(--ndot)}
+  .node-top{display:flex;align-items:center;gap:10px}
+  .node-dot{width:13px;height:13px;border-radius:50%;background:var(--ndot);flex:0 0 auto}
+  .node-nt{font-family:"Noto Serif TC",serif;font-weight:700;font-size:1.26rem}
+  .node-nc{font-size:.74rem;font-weight:700;color:#fff;background:var(--ndot);
+    border-radius:999px;padding:2px 10px;margin-left:2px}
+  .node-nd{font-size:.85rem;color:var(--ink-soft);margin-top:5px;padding-left:23px}
+  .node-books{display:grid;grid-template-columns:repeat(3,1fr);gap:9px;padding:15px 18px 18px}
+  .nbook{display:flex;gap:10px;align-items:flex-start;background:#fbf6ee;
+    border:1px solid #ece1cf;border-radius:10px;padding:10px 12px;cursor:pointer;
+    transition:all .15s;text-align:left}
+  .nbook:hover{border-color:var(--ndot);transform:translateY(-1px)}
+  .nbook .ni{font-family:"Noto Serif TC",serif;font-weight:700;color:var(--ndot);
+    font-size:.82rem;min-width:1.6em;padding-top:2px}
+  .nbook .nbi{flex:1;min-width:0}
+  .nbook .nbt{font-family:"Noto Serif TC",serif;font-weight:700;font-size:.96rem;line-height:1.3}
+  .nbook .nba{font-size:.75rem;color:var(--ink-soft);margin-top:1px}
+  .node-sum{font-size:.74rem;color:var(--ink-soft);text-align:center;padding:8px 0 20px}
+
+  /* 知識地圖檢視 */
+  .grid.graphmode{display:block}
+  .graphwrap{background:var(--card);border:1px solid var(--line);border-radius:16px;
+    box-shadow:var(--shadow);padding:14px 14px 6px;overflow:hidden}
+  .graphwrap svg{width:100%;height:auto;display:block;touch-action:pan-y}
+  .gedge{stroke:#c2b6a0;fill:none;transition:stroke .15s,opacity .15s,stroke-width .15s}
+  .ghit{stroke:transparent;fill:none;stroke-width:16;cursor:pointer;pointer-events:stroke}
+  .gnode{cursor:pointer}
+  .gnode circle{transition:transform .15s,filter .15s;transform-box:fill-box;transform-origin:center}
+  .gnode:hover circle{filter:brightness(1.08)}
+  .gnode .gcount{fill:#fff;font-family:"Noto Serif TC",serif;font-weight:900;text-anchor:middle;dominant-baseline:central}
+  .gnode .glabel{font-family:"Noto Serif TC",serif;font-weight:700;text-anchor:middle;fill:var(--ink);font-size:14px}
+  .gnode .gsub{text-anchor:middle;fill:var(--ink-soft);font-size:10.5px}
+  /* hover / 選取聚焦 */
+  svg.focusing .gnode.dim{opacity:.22}
+  svg.focusing .gedge.dim{opacity:.05}
+  svg.focusing .gedge.hot{stroke:var(--accent);opacity:.7}
+  .graph-legend{display:flex;flex-wrap:wrap;gap:6px 14px;align-items:center;justify-content:center;
+    padding:12px 8px 6px;font-size:.78rem;color:var(--ink-soft)}
+  .graph-legend .lg{display:inline-flex;align-items:center;gap:5px}
+  .graph-legend .ln{width:22px;height:0;border-top:3px solid #c2b6a0}
+  .graph-legend .ln.med{border-top-width:1.5px}
+  .graph-legend .lc{width:11px;height:11px;border-radius:50%;background:var(--ink-soft)}
+  .graph-hint{text-align:center;font-size:.78rem;color:var(--ink-soft);padding:4px 0 18px}
+  .graph-hint b{color:var(--accent)}
+  /* 關聯說明面板 */
+  .edge-info{background:var(--card);border:1px solid var(--line);border-radius:14px;
+    box-shadow:var(--shadow);padding:15px 18px;margin-top:13px;min-height:62px;
+    display:flex;align-items:center;gap:14px;transition:border-color .15s}
+  .edge-info.active{border-color:var(--accent-soft)}
+  .edge-info .ei-empty{color:var(--ink-soft);font-size:.9rem}
+  .edge-info .ei-pair{flex:0 0 auto;display:flex;align-items:center;gap:7px}
+  .ei-chip{display:inline-flex;align-items:center;gap:6px;font-family:"Noto Serif TC",serif;
+    font-weight:700;font-size:.92rem;background:#f4efe6;border-radius:999px;padding:5px 13px;white-space:nowrap}
+  .ei-chip .dot{width:11px;height:11px;border-radius:50%}
+  .ei-link{color:var(--accent);font-weight:700;font-size:1.05rem}
+  .ei-why{font-size:.92rem;line-height:1.6;color:var(--ink)}
+  .ei-why .wlbl{display:block;font-size:.72rem;font-weight:700;color:var(--accent);
+    letter-spacing:.05em;margin-bottom:2px;font-family:"Noto Serif TC",serif}
+  .ei-strength{flex:0 0 auto;font-size:.72rem;color:var(--ink-soft);
+    border:1px solid var(--line);border-radius:7px;padding:2px 8px;white-space:nowrap}
+
+  .empty{text-align:center;padding:60px 0;color:var(--ink-soft)}
+  footer{border-top:1px solid var(--line);padding:30px 0 70px;color:var(--ink-soft)}
+  .cta{background:linear-gradient(180deg,#fbf3ea,#fff);border:1px solid #e8d6c2;
+    border-radius:18px;padding:26px 24px;text-align:center;max-width:640px;margin:0 auto}
+  .cta-t{font-family:"Noto Serif TC",serif;font-weight:900;font-size:1.4rem;color:var(--accent);margin-bottom:8px}
+  .cta p{font-size:.96rem;line-height:1.85;color:var(--ink)}
+  .cta-sub{margin-top:14px;font-family:"Noto Serif TC",serif;font-weight:600;color:var(--ink-soft)}
+  .foot-meta{text-align:center;font-size:.78rem;color:var(--ink-soft);margin-top:26px;opacity:.8}
+
+  /* 字級縮放（套用於根元素，連動所有 rem 文字） */
+  html.fs1{font-size:17px} html.fs2{font-size:18.5px}
+
+  @media(max-width:780px){
+    .legend{grid-template-columns:1fr 1fr}
+    .stages{grid-template-columns:1fr}
+    .syn-grid{grid-template-columns:1fr}
+    .reclist{grid-template-columns:1fr}
+    .node-books{grid-template-columns:1fr 1fr}
+    .edge-info{flex-direction:column;align-items:flex-start;gap:9px}
+    header{padding:42px 0 18px}
+    .controls{padding:9px 0 7px}
+    .viewtoggle{margin-bottom:9px}
+    .chips{flex-wrap:nowrap;overflow-x:auto;-webkit-overflow-scrolling:touch;
+      margin-top:9px;padding-bottom:4px;scrollbar-width:none;-ms-overflow-style:none}
+    .chips::-webkit-scrollbar{display:none}
+    .chip{flex:0 0 auto}
+    .meta{margin-top:8px}
+    .vt{padding:7px 12px;font-size:.82rem}
+    .viewtoggle{margin-bottom:0}
+    .ctrow{margin-bottom:10px}
+    .fontctrl{margin-left:auto}
+    .how{flex-direction:column;align-items:flex-start;gap:7px}
+    .how-t{border-right:0;padding-right:0}
+    .actions .act-btn{flex:1 1 auto;text-align:center}
+    .cta{padding:22px 18px}
+    .book{scroll-margin-top:182px}
+    .grid{scroll-margin-top:182px}
+  }
+  @media print{.controls{display:none}.book{break-inside:avoid}.body{grid-template-rows:1fr!important}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="eyebrow">A SHELF THAT THINKS WITH YOU</div>
+    <h1>一座會帶你<span class="dim">思考</span>的書櫃</h1>
+    <p class="invite">嗨，這是我整理的閱讀筆記 📚<br>
+      讀了不少關於學習、思考、人生與工作的書後，我深深覺得——<br>
+      <b>真正改變我們的，不是「讀了幾本」，而是「有沒有變成自己的東西」。</b><br>
+      所以我把 <b>77 本</b>書整理成這座小書櫃，想分享給你。<span class="soft">不用全部看完，挑你「有感」的那幾本就好 🙂</span></p>
+
+    <div class="how">
+      <span class="how-t">30 秒上手</span>
+      <span class="step"><b>1</b> 點任一本書，展開四階段重點</span>
+      <span class="step"><b>2</b> 想找方向，切到「節點總覽」或「知識地圖」</span>
+      <span class="step"><b>3</b> 用下面的工具，讓書來找你 👇</span>
+    </div>
+
+    <div class="actions">
+      <button class="act-btn primary" id="randomBtn">🎲 今天讀哪本？</button>
+      <button class="act-btn" id="beginnerBtn">🔰 新手先讀這 8 本</button>
+      <button class="act-btn" id="painBtn">🎯 選困擾，幫你配書</button>
+    </div>
+
+    <div class="pain" id="painBox" hidden>
+      <div class="pain-hd">🎯 你最近卡在哪？選一個，我幫你配書</div>
+      <div class="pain-opts" id="painOpts"></div>
+      <div class="pain-result" id="painResult" hidden></div>
+    </div>
+
+    <div class="legend">
+      <div class="leg l1"><div class="n">第一階段</div><div class="t">閱讀 Read</div><div class="d">掌握全書核心、關鍵句與作者主張。</div></div>
+      <div class="leg l2"><div class="n">第二階段</div><div class="t">思考 Think</div><div class="d">加入個人主觀想法與對作者觀點的看法。</div></div>
+      <div class="leg l3"><div class="n">第三階段</div><div class="t">思維擴張 Mind</div><div class="d">透過書省思自己的意識轉變，延伸到人生。</div></div>
+      <div class="leg l4"><div class="n">第四階段</div><div class="t">總結 Summary</div><div class="d">演講題目、關鍵字、一句話總結與延伸書單。</div></div>
+    </div>
+
+    <div class="note">
+      📌 每張卡片都有：<b>四階段筆記</b>、<b>串聯式閱讀</b>（核心原則／思考框架／可勾選行動清單）與<b>一加五延伸</b>（再配 5 本相關好書）。「我的想法」與「串聯點」是分享給你的思考起點，你也可以換成自己的情境 💬
+    </div>
+  </header>
+
+  <div class="controls">
+    <div class="ctrow">
+      <div class="viewtoggle">
+        <button class="vt on" data-view="list">卡片檢視</button>
+        <button class="vt" data-view="map">節點總覽</button>
+        <button class="vt" data-view="graph">知識地圖</button>
+      </div>
+      <div class="fontctrl" title="調整字級">
+        <button class="fb" data-fs="-1">A−</button><button class="fb" data-fs="1">A＋</button>
+      </div>
+    </div>
+    <div class="searchbox">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
+      <input id="q" type="text" placeholder="搜尋書名、作者、關鍵字、延伸推薦…">
+    </div>
+    <div class="chips" id="chips"></div>
+    <div class="meta">
+      <span>顯示 <b id="count">0</b> <span id="unit">本</span></span>
+      <span class="prog">✓ 已讀 <b id="readCount">0</b> / 77</span>
+      <button class="toolbtn" id="toggleAll">全部展開 / 收合</button>
+    </div>
+  </div>
+
+  <div class="grid" id="grid"></div>
+
+  <footer>
+    <div class="cta">
+      <div class="cta-t">💬 換你了！</div>
+      <p>留言告訴我「你最近卡在哪」，我幫你從這 77 本裡配一本書 📩<br>
+      或分享你今年最有感的一本書＋一句話，我們一起湊出「大家的共讀清單」。</p>
+      <div class="cta-sub">讀書這件事，一個人走得快，一群人走得遠 🌱</div>
+    </div>
+    <div class="foot-meta">閱讀四階段筆記 · READ → THINK → MIND → SUMMARY · 77 本 × 一加五延伸</div>
+  </footer>
+</div>
+
+<script>
+const BOOKS = [{"name": "上台的技術", "author": "王永福", "cat": "簡報表達", "core": "把「上台」拆成可訓練的技術：內容結構化、開場破冰、控場互動與臨場穩定，讓觀眾記住重點。", "key": "不是你講了什麼，而是觀眾記住了什麼。", "claim": "表達力是可以系統化練習的硬技能，而非天賦。", "think": "不論是上台報告、面試，還是在會議或群組裡發言，這本書把「緊張」拆成「準備不足」的具體清單，值得逐項檢核。", "mind": "一個提案能不能被接受，常取決於你能否在短短幾分鐘內讓對方買單；把表達練好，你的想法才有機會被看見、被採用。", "speech": "讓決策者點頭的 20 分鐘", "keyword": "結構", "oneline": "先設計觀眾的記憶點，再設計你的投影片。", "ext": [{"t": "跟TED學表達", "a": "卡曼‧蓋洛", "w": "頂尖演說的結構與感染力"}, {"t": "簡報禪", "a": "賈爾‧雷諾茲", "w": "極簡視覺簡報設計"}, {"t": "影響力", "a": "羅伯特‧席爾迪尼", "w": "說服背後的心理原理"}, {"t": "創意黏力學", "a": "奇普‧希思、丹‧希思", "w": "讓訊息被記住的法則"}, {"t": "關鍵對話", "a": "科里‧派特森 等", "w": "高風險場合的臨場表達"}], "syn": {"pr": ["觀眾的記憶優先於內容的堆疊", "結構先於投影片", "緊張多半是準備不足"], "fw": "先決定觀眾要記住什麼，再倒推內容與形式的『逆向表達』框架。", "st": ["開講前寫下觀眾離場時要記得的那一句話", "用三段式（開場鉤、主體、收尾金句）搭骨架", "正式上台前完整演練至少 3 次", "準備一個破冰開場與一個結尾金句"], "lk": "歸入「表達／影響力」節點；與《打造圖像腦》《說服》並讀可串成完整表達系統，想加深說服心理再接《影響力》。", "sm": "把每次上台都當成一場為觀眾記憶點而設計的專案。"}, "beginner": false}, {"name": "窮查理的普通常識", "author": "查理‧蒙格", "cat": "策略決策", "core": "以「多元思維模型」跨學科分析問題，靠反向思考與避免愚蠢，累積長期理性優勢。", "key": "反過來想，總是反過來想。", "claim": "與其追求聰明，不如系統性地避免愚蠢。", "think": "把「我要怎麼成功」改問成「什麼會讓這件事失敗」，在風險管理與專案規劃上特別實用。", "mind": "買房、轉職、投資這些人生大事最怕只用單一角度想；用財務、心理、機率多個角度交叉檢視，能少踩很多坑。", "speech": "避免愚蠢，比追求聰明更可靠", "keyword": "逆向", "oneline": "用跨學科的格柵思考，把錯誤先排除掉。", "ext": [{"t": "思考，快與慢", "a": "丹尼爾‧康納曼", "w": "系統性認知偏誤"}, {"t": "黑天鵝", "a": "納西姆‧塔雷伯", "w": "面對極端不確定"}, {"t": "投資最重要的事", "a": "霍華‧馬克斯", "w": "理性與第二層思考"}, {"t": "真確", "a": "漢斯‧羅斯林", "w": "用數據破除直覺偏見"}, {"t": "反脆弱", "a": "納西姆‧塔雷伯", "w": "從波動中受益"}], "syn": {"pr": ["多元思維模型勝過單一專業", "反過來想，先排除失敗", "避免愚蠢比追求聰明可靠"], "fw": "用跨學科『思維格柵』交叉檢視同一問題的決策框架。", "st": ["為常用的 5–7 個學科各記一個核心模型", "遇重大決策先問『怎樣會失敗』", "重要判斷至少用兩個學科視角覆核", "建立自己的決策錯誤案例庫"], "lk": "這是「決策」知識網的總綱；與《思考，快與慢》《底層邏輯》互補，讀懂它能加速理解後續所有決策類書。", "sm": "建立跨學科模型庫，用它過濾每一個重要決定。"}, "beginner": false}, {"name": "持續買進", "author": "尼克‧馬朱利", "cat": "投資理財", "core": "以數據證明「長期、持續投入」勝過擇時，把投資簡化成可持續的穩定行動。", "key": "越早且越持續地投入，時間會替你工作。", "claim": "行為紀律比市場預測更能決定長期報酬。", "think": "擇時的誘惑很大，但本書用證據說服你「無聊的紀律」才是答案，這對情緒化交易者是良藥。", "mind": "複利不只在金錢；制度、人才、知識庫的持續投入，同樣會在數年後產生不可逆的領先。", "speech": "無聊的紀律，最強的複利", "keyword": "持續", "oneline": "持續買進、減少判斷，讓時間成為你的隊友。", "ext": [{"t": "漫步華爾街", "a": "柏頓‧墨基爾", "w": "被動投資經典"}, {"t": "約翰柏格投資常識", "a": "約翰‧柏格", "w": "指數化長期投資"}, {"t": "投資金律", "a": "威廉‧伯恩斯坦", "w": "資產配置原理"}, {"t": "智慧型股票投資人", "a": "班傑明‧葛拉漢", "w": "價值投資祖師"}, {"t": "跟錢好好相處", "a": "薇琪‧魯賓", "w": "金錢與人生的平衡"}], "syn": {"pr": ["持續投入勝過擇時", "行為紀律決定報酬", "越早越久，複利越強"], "fw": "把投資化約為『定期、自動、不中斷』的單一行動框架。", "st": ["設定每月自動扣款，移除人為判斷", "不看盤、不因新聞調整部位", "把加薪／獎金按比例自動加碼", "每年只檢視一次配置"], "lk": "與《長期買進》《致富心態》同屬「長期投資」節點；三本對照可看出『紀律 vs 心態 vs 制度』三種切入同一結論的路徑。", "sm": "用自動化把投資變成不需意志力的習慣。"}, "beginner": false}, {"name": "勝算", "author": "劉潤", "cat": "策略決策", "core": "提升決策勝率：看懂局勢、辨識機會、用結構化策略提高成功機率。", "key": "做對的事，比把事情做對更重要。", "claim": "勝算來自對局勢與機率的清醒判斷，而非運氣。", "think": "把每個重大決定都先估一個「勝率」，能逼自己面對不確定，而非靠直覺。", "mind": "人生的時間與精力有限，與其平均用力，不如先投在勝率高、影響大的事上（例如健康與關鍵技能）。", "speech": "先看懂局，再下你的棋", "keyword": "勝率", "oneline": "用結構提高勝率，而不是賭運氣。", "ext": [{"t": "思考，快與慢", "a": "丹尼爾‧康納曼", "w": "決策心理基礎"}, {"t": "超預測", "a": "菲利普‧泰特洛克", "w": "機率化判斷"}, {"t": "好策略，壞策略", "a": "理查‧魯梅特", "w": "策略的核心邏輯"}, {"t": "雜訊", "a": "丹尼爾‧康納曼 等", "w": "判斷中的隱形誤差"}, {"t": "決斷的演算", "a": "布萊恩‧克里斯汀 等", "w": "用演算法做決定"}], "syn": {"pr": ["先做對的事，再把事做對", "用機率而非直覺判斷", "資源投在高勝率高槓桿處"], "fw": "為每個重大選擇估『勝率 × 影響』後排序的決策框架。", "st": ["決策前先寫下成功機率的數字", "列出提高勝率的可控變數", "刪掉低勝率、低槓桿的選項", "事後比對預估與結果以校準"], "lk": "歸入「策略決策」節點；與《策略》《勝者謀局》串讀可從『判斷→佈局→取捨』形成完整鏈條。", "sm": "凡事先估勝率，再決定要不要下注。"}, "beginner": false}, {"name": "原子習慣", "author": "詹姆斯‧克利爾", "cat": "習慣行動", "core": "微小改變透過系統累積成巨大成果，關鍵在身分認同與四階段循環：提示、渴望、回應、獎賞。", "key": "你不會升到目標的高度，只會降到系統的水準。", "claim": "改變行為的核心是改變身分，而非設定目標。", "think": "與其立志「我要運動」，不如先成為「一個會運動的人」；身分先行，行為才穩。", "mind": "組織文化其實是集體習慣；把好習慣寫進制度與環境設計，比靠個人意志更可靠。", "speech": "1% 的複利：把好習慣設計進系統", "keyword": "系統", "oneline": "設計環境與身分，讓對的事自動發生。", "ext": [{"t": "為什麼我們這樣生活，那樣工作", "a": "查爾斯‧杜希格", "w": "習慣迴路科學"}, {"t": "恆毅力", "a": "安琪拉‧達克沃斯", "w": "長期堅持的力量"}, {"t": "心態致勝", "a": "卡蘿‧杜維克", "w": "成長型心態"}, {"t": "驅動力", "a": "丹尼爾‧品克", "w": "內在動機"}, {"t": "輕鬆駕馭意志力", "a": "凱莉‧麥高尼格", "w": "自制力的運作"}], "syn": {"pr": ["系統決定結果，目標只給方向", "身分認同先於行為", "環境設計勝過意志力"], "fw": "提示→渴望→回應→獎賞的四階段習慣迴路框架。", "st": ["把目標改寫成身分宣言（我是會__的人）", "用『習慣堆疊』綁在既有行為後", "讓好習慣的提示顯而易見、壞習慣隱形", "設定 2 分鐘可完成的最小版本"], "lk": "「習慣行為」節點的總入口；與《刻意練習》《彈性習慣》對照可區分『養成 vs 精進 vs 續航』三種行為改變邏輯。", "sm": "改變身分與環境，讓對的行為自動發生。"}, "beginner": true}, {"name": "納瓦爾寶典", "author": "艾力克‧喬高森", "cat": "人生哲學", "core": "彙整納瓦爾對財富、幸福、獨特知識、槓桿與自由的觀點，強調長期、耐心與做自己。", "key": "靠出賣時間賺不到真正的財富，要靠槓桿。", "claim": "財富與幸福都是可學的技能，核心是長期主義與自我真實。", "think": "「獨特知識」這個概念提醒人：別人學不來的能力，才是你的護城河。", "mind": "把自己的一項專長做到別人難以取代的程度，本身就是一種人生槓桿與自由的基礎。", "speech": "找到你的獨特知識與槓桿", "keyword": "槓桿", "oneline": "用獨特知識加上槓桿，買回你的自由。", "ext": [{"t": "活出意義來", "a": "維克多‧弗蘭克", "w": "意義即財富"}, {"t": "與成功有約", "a": "史蒂芬‧柯維", "w": "由內而外的成功"}, {"t": "一週工作4小時", "a": "提摩西‧費里斯", "w": "槓桿與自由人生"}, {"t": "思考致富", "a": "拿破崙‧希爾", "w": "致富心智經典"}, {"t": "牧羊少年奇幻之旅", "a": "保羅‧科爾賀", "w": "追尋天命"}], "syn": {"pr": ["靠槓桿而非時間致富", "培養難以複製的獨特知識", "長期主義與做自己"], "fw": "獨特知識 × 槓桿（資本/人力/程式/媒體）= 財富與自由的框架。", "st": ["盤點自己學得最不費力的『獨特知識』", "選一種可規模化的槓桿持續累積", "把工作改為產出可累積的資產", "用長期賽局心態拒絕短期投機"], "lk": "歸入「人生哲學／致富觀」節點；與《人生的五種財富》《致富心態》串讀可把『金錢自由』放進更完整的人生座標。", "sm": "用獨特知識加上槓桿，買回時間與自由。"}, "beginner": false}, {"name": "底層邏輯", "author": "劉潤", "cat": "策略決策", "core": "抓住事物背後不變的基本規律，訓練更清楚的判斷與思考框架。", "key": "看清事物的本質，才能舉一反三。", "claim": "複雜世界的背後，是少數可遷移的底層規律。", "think": "遇到新問題時，先問「這跟我已知的哪個底層邏輯同構」，能快速看穿表象。", "mind": "跟家人、同事、廠商談事情看似各有立場，但背後在意的利益是相通的，看懂就能找到雙贏的談法。", "speech": "看穿表象，回到底層邏輯", "keyword": "本質", "oneline": "用不變的規律，應對萬變的問題。", "ext": [{"t": "思考，快與慢", "a": "丹尼爾‧康納曼", "w": "看清思考的本質"}, {"t": "真確", "a": "漢斯‧羅斯林", "w": "回到事實判斷"}, {"t": "影響力", "a": "羅伯特‧席爾迪尼", "w": "人性的底層規律"}, {"t": "黑天鵝", "a": "納西姆‧塔雷伯", "w": "本質性的不確定"}, {"t": "反脆弱", "a": "納西姆‧塔雷伯", "w": "結構性思考"}], "syn": {"pr": ["看本質而非表象", "規律可在不同情境間遷移", "利益與誘因決定行為"], "fw": "遇新問題先找『與哪個已知底層邏輯同構』的類比框架。", "st": ["把每個現象追問到不可再拆的規律", "用一句話寫下事情的本質", "在新情境套用舊規律驗證", "蒐集可遷移的思考模型"], "lk": "「策略決策」節點的基礎讀本；與《底層邏輯2》《勝算》連讀，可把抽象規律落到具體判斷。", "sm": "凡事先問本質，再談方法。"}, "beginner": false}, {"name": "一本搞定ChatGPT", "author": "謝孟諺 Mr.GoGo", "cat": "AI與數位", "core": "以實作為主，教提示詞設計與工作應用，幫助快速上手生成式 AI。", "key": "提示詞越精準，產出越接近你要的答案。", "claim": "AI 是放大器，會用的人效率倍增、不會用的人被淘汰。", "think": "把 AI 當成「需要清楚交辦的下屬」，輸入品質決定輸出品質。", "mind": "政府文件自動化與知識庫建置，正是生成式 AI 能立即創造行政效率的場域。", "speech": "把 AI 變成你的工作流引擎", "keyword": "提示", "oneline": "會提問的人，才能駕馭 AI。", "ext": [{"t": "AI 2041", "a": "李開復、陳楸帆", "w": "AI 落地的未來圖像"}, {"t": "21世紀的21堂課", "a": "哈拉瑞", "w": "AI 時代的挑戰"}, {"t": "第二次機器時代", "a": "布林優夫森、麥克費", "w": "科技與工作變革"}, {"t": "人類大命運", "a": "哈拉瑞", "w": "資料時代的人類"}, {"t": "超級智慧", "a": "尼克‧伯斯特隆姆", "w": "AI 的長期影響"}], "syn": {"pr": ["輸入品質決定輸出品質", "把 AI 當需要清楚交辦的下屬", "以工作流而非單次提問思考"], "fw": "角色→任務→脈絡→格式→範例的結構化提示框架。", "st": ["為常用任務建立提示詞模板庫", "每個提示明確指定角色與輸出格式", "用『給範例』提升產出準確度", "把多步驟任務拆成可串接的提示鏈"], "lk": "歸入「AI 與數位」節點；與《AI世界的底層邏輯與生存法則》對照，可同時掌握『怎麼用』與『為何用』。", "sm": "會結構化提問的人，才真正駕馭 AI。"}, "beginner": false}, {"name": "不否定的練習", "author": "林健太郎", "cat": "溝通人際", "core": "練習不急著否定他人或自己，先接住情緒與觀點，再理解與回應。", "key": "先接住，再回應。", "claim": "否定會關上對話的門，承接才能開啟理解。", "think": "在會議與協調中，習慣性的「但是」往往讓對方防衛；先肯定再補充，路會更順。", "mind": "安撫情緒中的家人、不滿的客戶、鬧脾氣的孩子，核心都一樣——先接住情緒，再處理問題。", "speech": "先接住情緒，對話才開始", "keyword": "承接", "oneline": "少一點否定，多一點理解的空間。", "ext": [{"t": "卡內基溝通與人際關係", "a": "戴爾‧卡內基", "w": "人際相處經典"}, {"t": "關鍵對話", "a": "科里‧派特森 等", "w": "承接式對話"}, {"t": "非暴力溝通", "a": "馬歇爾‧盧森堡", "w": "不帶評判的溝通"}, {"t": "蛤蟆先生去看心理師", "a": "羅伯‧狄保德", "w": "理解情緒的入門"}, {"t": "也許你該找人聊聊", "a": "蘿蕊‧葛利布", "w": "傾聽與被傾聽"}], "syn": {"pr": ["先承接情緒，再處理問題", "否定會關上對話的門", "理解不等於同意"], "fw": "承接→理解→回應，三步走的對話框架。", "st": ["回應前先複述對方的重點", "把口頭禪『但是』換成『同時』", "先肯定對方一點，再補充看法", "情緒高張時先處理感受、後談事實"], "lk": "歸入「溝通人際」節點；與《情商》《用機智代替幼稚》串讀可組成完整的人際應對工具箱。", "sm": "先接住對方，對話才真正開始。"}, "beginner": false}, {"name": "45歲退休，你準備好了？", "author": "田臨斌（老黑）", "cat": "投資理財", "core": "以提早退休為題，重點在財務準備、生活設計與人生下半場的意義規劃。", "key": "退休不是不工作，而是有選擇權。", "claim": "提早退休的關鍵不只是錢，更是生活方式與心態的準備。", "think": "「財務自由」常被當終點，本書提醒它只是起點——自由之後要拿來做什麼？", "mind": "把人生視為可設計的下半場，能讓現在的工作選擇更從容、更有方向。", "speech": "財務自由之後，你要過怎樣的人生", "keyword": "自由", "oneline": "先想清楚要的生活，錢只是工具。", "ext": [{"t": "跟錢好好相處", "a": "薇琪‧魯賓", "w": "金錢與生命能量"}, {"t": "別把你的錢留到死", "a": "比爾‧柏金斯", "w": "為體驗而花錢"}, {"t": "漫步華爾街", "a": "柏頓‧墨基爾", "w": "退休前的投資基礎"}, {"t": "一週工作4小時", "a": "提摩西‧費里斯", "w": "重新設計工作"}, {"t": "約翰柏格投資常識", "a": "約翰‧柏格", "w": "低成本被動退休金"}], "syn": {"pr": ["退休是取得選擇權", "錢只是工具，生活設計才是目的", "及早規劃下半場"], "fw": "財務數字 × 生活意義 雙軌規劃的退休框架。", "st": ["算出可支撐生活的被動收入目標", "想清楚退休後每天要做什麼", "提前演練『不上班』的生活樣貌", "分階段降低對單一收入的依賴"], "lk": "歸入「投資理財／人生規劃」節點；與《人生的五種財富》《給40歲的嶄新開始》串讀，把財務自由放進人生意義脈絡。", "sm": "先想清楚要的生活，再倒推需要多少錢。"}, "beginner": false}, {"name": "極度韌性", "author": "蘿絲‧紐曼", "cat": "自我成長", "core": "聚焦承受壓力、復原能力，以及在逆境中保持穩定並持續前進。", "key": "韌性不是不會倒，而是倒了能再站起。", "claim": "韌性是可訓練的能力，而非天生性格。", "think": "把挫折當「資料」而非「判決」，復原速度會明顯不同。", "mind": "面對失業、生病、低潮這些人生風浪，能不能站起來靠的就是「韌性」——而它和體能一樣可以鍛鍊。", "speech": "倒下之後，如何更快站起", "keyword": "復原", "oneline": "韌性是練出來的恢復速度。", "ext": [{"t": "心態致勝", "a": "卡蘿‧杜維克", "w": "逆境中的成長心態"}, {"t": "恆毅力", "a": "安琪拉‧達克沃斯", "w": "堅持到底"}, {"t": "擁抱B選項", "a": "桑德伯格、格蘭特", "w": "失去後的復原"}, {"t": "活出意義來", "a": "維克多‧弗蘭克", "w": "苦難中找意義"}, {"t": "身體會記住", "a": "貝塞爾‧范德寇", "w": "創傷與恢復"}], "syn": {"pr": ["韌性是可訓練的恢復力", "把挫折當資料而非判決", "穩定來自事前的準備"], "fw": "承壓→復原→再前進的韌性循環框架。", "st": ["建立壓力下可依循的固定流程", "事後覆盤把失敗轉成可學的資料", "保留身心恢復的固定時段", "預演最壞情境以降低臨場慌亂"], "lk": "歸入「自我成長／心理韌性」節點；與《逆商》《為何一流的人不會有壓力》串讀，可比較『恢復力 vs 抗挫 vs 壓力管理』三種角度。", "sm": "韌性是練出來的恢復速度，不是不會倒。"}, "beginner": false}, {"name": "內在成就", "author": "愛瑞克", "cat": "自我成長", "core": "從外在比較轉向內在價值，建立自我認同與長期滿足感。", "key": "真正的成就，由內而外。", "claim": "幸福來自內在的自我肯定，而非外界的評價排名。", "think": "當成就感長期依賴外部肯定，就容易被他人定義；本書邀你把標準收回自己手上。", "mind": "很多努力（顧家、進修、默默付出）都缺乏即時掌聲，建立內在價值感，才能在沒人鼓掌時仍走得下去。", "speech": "把成就的標準收回自己手上", "keyword": "內在", "oneline": "先安頓內在，外在自然從容。", "ext": [{"t": "活出意義來", "a": "維克多‧弗蘭克", "w": "內在意義感"}, {"t": "心流", "a": "米哈里‧契克森米哈伊", "w": "投入帶來的滿足"}, {"t": "真實的快樂", "a": "馬汀‧塞利格曼", "w": "正向心理學"}, {"t": "與成功有約", "a": "史蒂芬‧柯維", "w": "內在原則優先"}, {"t": "當下的力量", "a": "艾克哈特‧托勒", "w": "回到內在當下"}], "syn": {"pr": ["從外在比較轉向內在價值", "成就感的標準收回自己手上", "長期滿足來自意義"], "fw": "以自我認同與意義為核心、外部評價為次要的價值框架。", "st": ["寫下不依賴他人肯定的自我價值來源", "減少社群比較的觸發情境", "為長期意義設定內在指標", "定期回顧『我為何而做』"], "lk": "歸入「人生哲學／自我」節點；與《被討厭的勇氣》《變成自己想要的大人》串讀可形成完整的自我認同地圖。", "sm": "先安頓內在價值，外在自然從容。"}, "beginner": false}, {"name": "這一生，你想留下什麼？", "author": "約翰‧漢尼斯", "cat": "領導團隊", "core": "以人生意義、影響力、貢獻與留下的價值為核心，談謙遜的領導。", "key": "領導的本質是服務他人。", "claim": "真正的領導力建立在謙遜、誠信與長期貢獻之上。", "think": "把「我能留下什麼」當作決策的尺，許多短期取捨會變得清楚。", "mind": "陪伴與身教，是父母與長輩能留給下一代最持久的遺產。", "speech": "以服務為核心的領導", "keyword": "傳承", "oneline": "用你想留下的東西，倒推今天怎麼做。", "ext": [{"t": "從A到A+", "a": "詹姆‧柯林斯", "w": "第五級謙遜領導"}, {"t": "最後吃，所以你贏", "a": "賽門‧西奈克", "w": "以服務為核心"}, {"t": "與成功有約", "a": "史蒂芬‧柯維", "w": "以終為始"}, {"t": "給予", "a": "亞當‧格蘭特", "w": "貢獻者的長期勝出"}, {"t": "僕人", "a": "詹姆斯‧杭特", "w": "僕人式領導"}], "syn": {"pr": ["領導的本質是服務", "以謙遜與誠信為底", "重視長期貢獻與傳承"], "fw": "用『我想留下什麼』倒推當下決策的領導框架。", "st": ["寫下希望被記得的三件事", "用『傳承』檢視重大取捨", "把培育人才列為核心職責", "以服務而非權力定義領導"], "lk": "歸入「領導團隊」節點；與《你要如何衡量你的人生？》《教練》串讀，把『領導』與『人生意義』接在一起。", "sm": "用你想留下的東西，倒推今天怎麼領導。"}, "beginner": false}, {"name": "你要如何衡量你的人生？", "author": "克雷頓‧克里斯汀生", "cat": "人生哲學", "core": "用管理理論思考人生，關注職涯動機、家庭、價值觀與長期選擇的一致性。", "key": "百分百堅守原則，比 98% 更容易。", "claim": "人生的成功要用對的標準衡量，而非世俗的職位與財富。", "think": "資源（時間、心力）配置反映真正的優先順序，本書逼你檢視「嘴上說的」與「實際投入的」是否一致。", "mind": "組織的策略邏輯（資源分配決定結果）同樣適用人生與家庭。", "speech": "用對的尺，衡量你的人生", "keyword": "衡量", "oneline": "你把時間花在哪，人生就長成什麼樣。", "ext": [{"t": "與成功有約", "a": "史蒂芬‧柯維", "w": "價值觀與優先順序"}, {"t": "活出意義來", "a": "維克多‧弗蘭克", "w": "人生的意義尺度"}, {"t": "從A到A+", "a": "詹姆‧柯林斯", "w": "長期一致的選擇"}, {"t": "最後14堂星期二的課", "a": "米奇‧艾爾邦", "w": "臨終視角看人生"}, {"t": "給予", "a": "亞當‧格蘭特", "w": "關係的長期報酬"}], "syn": {"pr": ["用對的標準衡量人生", "資源配置反映真正的優先順序", "100% 堅守原則比 98% 容易"], "fw": "以管理理論（動機、資源分配、邊際思維）檢視人生的框架。", "st": ["盤點時間與心力實際花在哪", "對照『嘴上說的』與『實際投入的』", "為家庭與健康設定不可妥協底線", "拒絕『就這一次』的邊際妥協"], "lk": "歸入「人生哲學」節點；與《這一生，你想留下什麼？》《人生的五種財富》串讀可組成人生策略三部曲。", "sm": "你把時間花在哪，人生就長成什麼樣。"}, "beginner": true}, {"name": "長期買進", "author": "周冠男", "cat": "投資理財", "core": "長線投資、紀律投入、降低情緒干擾，強調時間複利與被動投資。", "key": "市場短期是投票機，長期是體重計。", "claim": "散戶最大的優勢是時間與紀律，而非預測。", "think": "本書以行為財務學提醒：你最大的敵人往往是自己的情緒。", "mind": "凡是長期才見效的事（健康、制度、信任），都共用同一條紀律法則。", "speech": "紀律與時間：散戶的真正優勢", "keyword": "紀律", "oneline": "少操作、長持有，把時間站在你這邊。", "ext": [{"t": "漫步華爾街", "a": "柏頓‧墨基爾", "w": "效率市場與被動投資"}, {"t": "約翰柏格投資常識", "a": "約翰‧柏格", "w": "指數投資紀律"}, {"t": "投資金律", "a": "威廉‧伯恩斯坦", "w": "配置與再平衡"}, {"t": "智慧型股票投資人", "a": "班傑明‧葛拉漢", "w": "安全邊際"}, {"t": "投資最重要的事", "a": "霍華‧馬克斯", "w": "風險與耐心"}], "syn": {"pr": ["長期持有勝過頻繁操作", "降低情緒干擾", "時間複利是最大優勢"], "fw": "被動指數 + 紀律持有 + 不擇時的長期投資框架。", "st": ["選定低成本指數標的", "設定自動定期投入", "制定『絕不在恐慌時賣出』規則", "把對帳頻率降到最低"], "lk": "與《持續買進》《致富心態》同屬「長期投資」節點；三本互為佐證，讀一本即可快速理解其餘兩本的核心。", "sm": "少操作、長持有，讓時間替你賺錢。"}, "beginner": false}, {"name": "活學活用菜根譚", "author": "陳明華", "cat": "人生哲學", "core": "以古典格言談修身、處世與心性，偏向日常實踐與智慧整理。", "key": "嚼得菜根，百事可做。", "claim": "在淡泊與務實之間取得平衡，是處世的長久之道。", "think": "古人智慧在快節奏時代反而像定錨，提醒人別被外境牽著走。", "mind": "東方修身觀與現代壓力管理、正念可以互相印證，形成自己的處世底盤。", "speech": "從菜根譚看現代處世智慧", "keyword": "修身", "oneline": "守得住淡泊，扛得起重任。", "ext": [{"t": "沉思錄", "a": "馬可‧奧理略", "w": "西方斯多葛修身"}, {"t": "道德經", "a": "老子", "w": "無為與處世"}, {"t": "論語", "a": "孔子", "w": "修身與待人"}, {"t": "莊子", "a": "莊周", "w": "逍遙與超脫"}, {"t": "活出意義來", "a": "維克多‧弗蘭克", "w": "在限制中安身"}], "syn": {"pr": ["淡泊與務實並重", "修身先於處世", "在順逆中守住心性"], "fw": "以古典格言對照日常情境的修身實踐框架。", "st": ["每日選一則格言對照當下情境", "遇情緒波動時回到一句定錨語", "把處世原則寫成自己的版本", "定期回顧實踐心得"], "lk": "歸入「人生哲學／國學」節點；與《沉思錄》《別對每件事都有反應》串讀，可看東西方修身觀的共通處。", "sm": "守得住淡泊，才扛得起重任。"}, "beginner": false}, {"name": "潛質", "author": "里奇‧第凡尼", "cat": "自我成長", "core": "談潛能開發與成長思維，重點在把潛在能力轉化為實際結果。", "key": "潛力若不行動，永遠只是可能。", "claim": "潛能需要刻意培養與實踐，才能成為真正的實力。", "think": "很多人停在「我其實可以」，本書提醒：可以與做到之間隔著行動。", "mind": "組織的人才管理也一樣——識別潛質只是第一步，給舞台與回饋才能兌現。", "speech": "把潛力兌現成實力", "keyword": "潛能", "oneline": "潛質要用行動兌現，否則只是標籤。", "ext": [{"t": "心態致勝", "a": "卡蘿‧杜維克", "w": "相信能力可成長"}, {"t": "恆毅力", "a": "安琪拉‧達克沃斯", "w": "熱情加毅力"}, {"t": "超速學習", "a": "史考特‧楊", "w": "快速精通技能"}, {"t": "驅動力", "a": "丹尼爾‧品克", "w": "激發內在潛能"}, {"t": "異數", "a": "麥爾坎‧葛拉威爾", "w": "成就背後的條件"}], "syn": {"pr": ["潛力需行動才成實力", "成長思維可被培養", "把能力轉成可見成果"], "fw": "識別潛能→刻意培養→兌現成果的成長框架。", "st": ["列出自己尚未兌現的潛在能力", "為每項潛能設計練習與舞台", "建立回饋機制檢視進展", "把『我可以』改成『我做到』"], "lk": "歸入「自我成長」節點；與《刻意練習》《心態致勝》串讀，把『潛能』接到具體的練習方法。", "sm": "潛質要用行動兌現，否則只是標籤。"}, "beginner": false}, {"name": "被討厭的勇氣", "author": "岸見一郎、古賀史健", "cat": "情緒心理", "core": "以阿德勒心理學為本，強調課題分離、目的論與不活在他人評價裡的自由。", "key": "自由，就是被別人討厭。", "claim": "煩惱皆源於人際關係，而幸福始於把別人的課題還給別人。", "think": "「課題分離」是極實用的界線工具：分清哪些是我的責任、哪些不是。", "mind": "我們常被父母、伴侶、主管的期待拉扯，懂得課題分離，才能守住自己的步調與心理能量。", "speech": "課題分離：找回你的人生主導權", "keyword": "勇氣", "oneline": "把別人的課題還給別人，你才自由。", "ext": [{"t": "自卑與超越", "a": "阿爾弗雷德‧阿德勒", "w": "阿德勒心理學原典"}, {"t": "活出意義來", "a": "維克多‧弗蘭克", "w": "選擇的自由"}, {"t": "也許你該找人聊聊", "a": "蘿蕊‧葛利布", "w": "看見自己的課題"}, {"t": "當下的力量", "a": "艾克哈特‧托勒", "w": "放下他人評價"}, {"t": "蛤蟆先生去看心理師", "a": "羅伯‧狄保德", "w": "自我覺察"}], "syn": {"pr": ["課題分離", "目的論而非原因論", "幸福始於不活在他人評價裡"], "fw": "分清『誰的課題』後各自負責的人際自由框架。", "st": ["遇衝突先問『這是誰的課題』", "把別人的課題還給別人", "用目的論問『我想達成什麼』", "練習接受被部分人討厭"], "lk": "「情緒心理／人際」節點的核心讀本；與《內在成就》《情商》串讀可建立完整的自我與人際界線。", "sm": "把別人的課題還給別人，你才自由。"}, "beginner": true}, {"name": "先放手，再放心", "author": "吳若權", "cat": "情緒心理", "core": "談放下控制、調整關係，讓自己回到平靜。", "key": "放手不是放棄，是給彼此空間。", "claim": "過度控制是焦慮的來源，學會放手才能安心。", "think": "控制感讓人以為安全，實際上常綁住關係與自己。", "mind": "領導與授權同理：能放手讓團隊承擔，組織才會長大。", "speech": "學會放手，才能真正放心", "keyword": "放手", "oneline": "鬆開手，關係與自己都能呼吸。", "ext": [{"t": "當下的力量", "a": "艾克哈特‧托勒", "w": "放下對未來的執著"}, {"t": "臣服實驗", "a": "麥克‧辛格", "w": "學會放手的歷程"}, {"t": "蛤蟆先生去看心理師", "a": "羅伯‧狄保德", "w": "情緒的整理"}, {"t": "也許你該找人聊聊", "a": "蘿蕊‧葛利布", "w": "關係的鬆綁"}, {"t": "道德經", "a": "老子", "w": "柔弱勝剛強"}], "syn": {"pr": ["放手不是放棄", "過度控制是焦慮來源", "給空間關係才呼吸"], "fw": "辨識可控／不可控，放掉不可控的安心框架。", "st": ["列出正在過度控制的人事物", "區分哪些其實不由自己決定", "刻意鬆手一件小事練習", "把焦慮轉成信任的行動"], "lk": "歸入「情緒心理」節點；與《別對每件事都有反應》《教練（授權）》串讀，把『放手』從關係延伸到管理。", "sm": "鬆開手，關係與自己都能呼吸。"}, "beginner": false}, {"name": "你想活出怎樣的人生？", "author": "吉野源三郎", "cat": "人生哲學", "core": "啟發式人生思考，聚焦品格、選擇、責任與「成為怎樣的人」。", "key": "重要的是你自己如何看世界、如何行動。", "claim": "人格的養成在於獨立思考與承擔選擇的責任。", "think": "以少年成長故事承載哲思，提醒成人別把「該怎麼活」的大哉問丟掉。", "mind": "把這個問題放大到世代與社會：我們希望下一代活在怎樣的價值裡？", "speech": "你想活出怎樣的人生", "keyword": "品格", "oneline": "先決定要成為怎樣的人，再決定怎麼做。", "ext": [{"t": "活出意義來", "a": "維克多‧弗蘭克", "w": "活著的意義"}, {"t": "最後14堂星期二的課", "a": "米奇‧艾爾邦", "w": "重要的人生課題"}, {"t": "牧羊少年奇幻之旅", "a": "保羅‧科爾賀", "w": "追尋與成長"}, {"t": "沉思錄", "a": "馬可‧奧理略", "w": "品格與責任"}, {"t": "與成功有約", "a": "史蒂芬‧柯維", "w": "成為怎樣的人"}], "syn": {"pr": ["獨立思考", "為選擇負責", "關注成為怎樣的人"], "fw": "以品格與選擇為核心的人生養成框架。", "st": ["定期自問『我想成為怎樣的人』", "面對選擇時對照核心價值", "把責任視為自由的一部分", "記錄並反思重要的抉擇"], "lk": "歸入「人生哲學／教育」節點；與《變成自己想要的大人》《活出意義來》串讀，貫穿少年到成人的價值養成。", "sm": "先決定要成為怎樣的人，再決定怎麼做。"}, "beginner": false}, {"name": "你可以生氣，但不要越想越氣", "author": "水島廣子", "cat": "情緒心理", "core": "針對憤怒管理，重點在辨識情緒、停止反芻思考。", "key": "生氣很正常，反芻才傷人。", "claim": "情緒本身沒有對錯，問題出在被它牽著重複折磨自己。", "think": "把「生氣」與「越想越氣」分開，是一個極具操作性的情緒急救法。", "mind": "第一線高壓環境中，能快速從憤怒中抽離，是專業穩定度的一部分。", "speech": "停止反芻：情緒的急救法", "keyword": "反芻", "oneline": "允許情緒發生，但別讓它循環播放。", "ext": [{"t": "情緒勒索", "a": "蘇珊‧佛沃", "w": "辨識被牽動的情緒"}, {"t": "非暴力溝通", "a": "馬歇爾‧盧森堡", "w": "表達憤怒的方式"}, {"t": "EQ", "a": "丹尼爾‧高曼", "w": "情緒智力基礎"}, {"t": "蛤蟆先生去看心理師", "a": "羅伯‧狄保德", "w": "停止內在循環"}, {"t": "也許你該找人聊聊", "a": "蘿蕊‧葛利布", "w": "與情緒對話"}], "syn": {"pr": ["情緒本身沒有對錯", "反芻才是傷害來源", "辨識比壓抑有效"], "fw": "把『生氣』與『越想越氣』切開的情緒急救框架。", "st": ["生氣時先命名情緒", "設定停止反芻的提示動作", "把注意力轉向可行動的事", "事後簡短記錄觸發點"], "lk": "歸入「情緒心理」節點；與《情商》《別對每件事都有反應》串讀可組成情緒調節工具組。", "sm": "允許情緒發生，但別讓它循環播放。"}, "beginner": false}, {"name": "刻意練習", "author": "安德斯‧艾瑞克森、羅伯特‧普爾", "cat": "習慣行動", "core": "強調有目標、有回饋、能校正的練習，才能真正建立卓越能力。", "key": "天才是練出來的，但要練對方法。", "claim": "傑出表現源於刻意練習，而非天賦或單純的時數累積。", "think": "「一萬小時」常被誤讀；本書點明關鍵在練習的「品質」而非「數量」。", "mind": "學語言、練樂器、準備考試，都需要明確目標、即時回饋與漸進挑戰，才會真正進步。", "speech": "練對方法，才有卓越", "keyword": "回饋", "oneline": "有目標、有回饋的練習，才算數。", "ext": [{"t": "異數", "a": "麥爾坎‧葛拉威爾", "w": "一萬小時的真相"}, {"t": "恆毅力", "a": "安琪拉‧達克沃斯", "w": "練習的持久力"}, {"t": "心態致勝", "a": "卡蘿‧杜維克", "w": "可成長的能力觀"}, {"t": "超速學習", "a": "史考特‧楊", "w": "高效自學法"}, {"t": "大腦當家", "a": "約翰‧麥迪納", "w": "大腦如何學習"}], "syn": {"pr": ["練習品質重於時數", "需明確目標與即時回饋", "在學習區邊緣挑戰"], "fw": "目標→專注練習→回饋→修正的精進循環框架。", "st": ["把大能力拆成可練的小單元", "為每次練習設定明確目標", "建立即時回饋來源（教練/紀錄）", "刻意練最弱、最不舒服的部分"], "lk": "「習慣行動／技能精進」節點的方法核心；與《原子習慣》《心像練習》串讀，可分清『養成 vs 精進 vs 心理演練』。", "sm": "有目標、有回饋的練習，才算數。"}, "beginner": true}, {"name": "你和夢想之間，只差一個行動", "author": "行動派", "cat": "習慣行動", "core": "把想法落地，減少拖延，從小行動開始累積動能。", "key": "想，都是問題；做，才有答案。", "claim": "行動力是夢想與現實之間唯一的橋。", "think": "完美主義常是拖延的偽裝；先求完成，再求完美。", "mind": "想減重、想學新技能、想開始副業，從構想到實現，差的也常只是「先動起來」的那一步。", "speech": "從一個小行動開始", "keyword": "行動", "oneline": "別等準備好，先踏出第一步。", "ext": [{"t": "搞定！", "a": "大衛‧艾倫", "w": "把想法變行動"}, {"t": "驅動力", "a": "丹尼爾‧品克", "w": "行動的動機"}, {"t": "輕鬆駕馭意志力", "a": "凱莉‧麥高尼格", "w": "克服拖延"}, {"t": "先別急著吃棉花糖", "a": "喬辛‧迪‧波沙達", "w": "延遲享樂與執行"}, {"t": "5秒法則", "a": "梅爾‧羅賓斯", "w": "立刻啟動的技巧"}], "syn": {"pr": ["先完成再求完美", "小行動啟動動能", "拖延是完美主義的偽裝"], "fw": "縮小第一步、立刻啟動的執行框架。", "st": ["把目標拆到 5 分鐘可開始的第一步", "設定啟動的觸發時機", "公開承諾以提高執行率", "用『先做爛版本』破除拖延"], "lk": "歸入「習慣行動」節點；與《生時間》《原子習慣》串讀，把『動起來』接到『持續做』。", "sm": "別等準備好，先踏出最小的第一步。"}, "beginner": false}, {"name": "睡前3分鐘超感謝筆記", "author": "心理諮商師Mika", "cat": "情緒心理", "core": "透過睡前感謝紀錄整理情緒、提升正向感受與睡眠品質。", "key": "睡前的最後念頭，決定明天的起點。", "claim": "刻意練習感恩，能重塑大腦的正向迴路。", "think": "小而持續的儀式，往往比偶一為之的大改變更能穩定心境。", "mind": "高壓工作者尤其需要可日常執行的情緒復原儀式，避免長期耗損。", "speech": "睡前 3 分鐘，重整一天的心", "keyword": "感恩", "oneline": "用感謝收尾今天，用安定迎接明天。", "ext": [{"t": "真實的快樂", "a": "馬汀‧塞利格曼", "w": "感恩與正向情緒"}, {"t": "為什麼要睡覺", "a": "馬修‧沃克", "w": "睡眠與身心修復"}, {"t": "心流", "a": "米哈里‧契克森米哈伊", "w": "正向體驗"}, {"t": "正念療癒力", "a": "喬‧卡巴金", "w": "睡前覺察練習"}, {"t": "當下的力量", "a": "艾克哈特‧托勒", "w": "安定當下的心"}], "syn": {"pr": ["感恩可重塑正向迴路", "小儀式勝過大改變", "睡前心境影響隔日"], "fw": "每日睡前感謝紀錄的情緒復原儀式框架。", "st": ["睡前寫下三件感謝的事", "具體描述而非空泛感謝", "固定時間養成儀式", "低潮時回看過往紀錄"], "lk": "歸入「情緒心理」節點；與《為何一流的人不會有壓力》串讀，把『感恩』納入壓力復原系統。", "sm": "用感謝收尾今天，用安定迎接明天。"}, "beginner": false}, {"name": "心像練習", "author": "蓋瑞‧麥克、大衛‧卡斯蒂夫", "cat": "自我成長", "core": "透過心理意象與內在演練，提升專注、表現與自我調整能力。", "key": "大腦分不清真實與生動的想像。", "claim": "在腦中預演成功，能實際提升現場表現。", "think": "運動員與外科醫師都用的技巧，對任何高壓臨場表現都適用。", "mind": "重大演習與危機處置前的「心智彩排」，能降低臨場失誤、提高團隊一致性。", "speech": "在腦中先贏一次", "keyword": "預演", "oneline": "先在心裡演練，現場才會穩。", "ext": [{"t": "心流", "a": "米哈里‧契克森米哈伊", "w": "專注的最佳狀態"}, {"t": "大腦當家", "a": "約翰‧麥迪納", "w": "大腦運作原理"}, {"t": "運動改造大腦", "a": "約翰‧瑞提", "w": "身心與表現"}, {"t": "改變是大腦的天性", "a": "諾曼‧多吉", "w": "大腦可被訓練"}, {"t": "心態致勝", "a": "卡蘿‧杜維克", "w": "表現背後的心態"}], "syn": {"pr": ["大腦分不清真實與生動想像", "預演可提升現場表現", "心理演練降低臨場失誤"], "fw": "在腦中具體預演成功流程的心智彩排框架。", "st": ["閉眼以五感細節預演關鍵場景", "重複演練到流程自動化", "在重大表現前做一次完整彩排", "結合實際練習交替進行"], "lk": "歸入「自我成長／表現」節點；與《刻意練習》互補，一個練身體、一個練大腦，並讀效果最佳。", "sm": "先在心裡演練成功，現場才會穩。"}, "beginner": false}, {"name": "激勵你的成功日記", "author": "小倉廣", "cat": "習慣行動", "core": "以日記與反思累積自我激勵、行動感與正向習慣。", "key": "寫下來，才會被看見、被改變。", "claim": "持續書寫與反思，是低成本的自我成長引擎。", "think": "日記不只是紀錄，更是與自己對話、校正方向的工具。", "mind": "組織的覆盤與個人的日記同理——可記錄、可回顧，才可改進。", "speech": "用書寫，驅動每天的前進", "keyword": "反思", "oneline": "每天寫一點，累積成更好的自己。", "ext": [{"t": "為什麼我們這樣生活，那樣工作", "a": "查爾斯‧杜希格", "w": "習慣的養成"}, {"t": "子彈思考整理術", "a": "瑞德‧卡洛", "w": "紀錄與反思系統"}, {"t": "恆毅力", "a": "安琪拉‧達克沃斯", "w": "自我激勵"}, {"t": "驅動力", "a": "丹尼爾‧品克", "w": "維持動機"}, {"t": "與成功有約", "a": "史蒂芬‧柯維", "w": "主動積極"}], "syn": {"pr": ["書寫使改變可見", "反思校正方向", "自我激勵需被紀錄"], "fw": "紀錄→反思→調整的自我覆盤框架。", "st": ["每天記下一件做對的事", "每週回顧並調整下週重點", "把目標與進度寫成可見清單", "用日記與自己對話"], "lk": "歸入「習慣行動」節點；與《原子習慣》串讀，把『紀錄』變成習慣迴路中的回饋環節。", "sm": "每天寫一點，累積成更好的自己。"}, "beginner": false}, {"name": "3秒搞定！職場心理學全事典", "author": "內藤誼人", "cat": "溝通人際", "core": "用快速可用的心理技巧，處理職場溝通、合作與人際互動。", "key": "懂一點心理學，職場省一半力。", "claim": "日常人際的許多摩擦，可用簡單的心理原理化解。", "think": "工具型書籍適合「即查即用」，挑與當下情境相關的技巧試行即可。", "mind": "理解行為背後的心理動機，是與同事相處、跟主管提案時的隱形優勢。", "speech": "職場裡的微心理學", "keyword": "技巧", "oneline": "小技巧用對地方，人際更省力。", "ext": [{"t": "影響力", "a": "羅伯特‧席爾迪尼", "w": "說服與互惠原理"}, {"t": "卡內基溝通與人際關係", "a": "戴爾‧卡內基", "w": "職場人際經典"}, {"t": "關鍵對話", "a": "科里‧派特森 等", "w": "關鍵時刻溝通"}, {"t": "EQ", "a": "丹尼爾‧高曼", "w": "職場情緒智力"}, {"t": "給予", "a": "亞當‧格蘭特", "w": "互助型人際"}], "syn": {"pr": ["懂心理可省人際力氣", "小技巧用對情境才有效", "行為背後有動機"], "fw": "情境對應心理技巧的即查即用工具框架。", "st": ["挑與當下情境相關的技巧試行", "觀察對方行為背後的需求", "建立常用情境的應對清單", "用後檢視效果再保留"], "lk": "歸入「溝通人際」節點；與《影響力》《用機智代替幼稚》串讀，把零散技巧接到底層原理。", "sm": "小技巧用對地方，人際更省力。"}, "beginner": false}, {"name": "轉念的力量", "author": "賴佩霞", "cat": "情緒心理", "core": "改變看事情的角度，讓情緒與行動隨之轉變。", "key": "念頭一轉，世界就不一樣。", "claim": "困住我們的常不是事件，而是對事件的詮釋。", "think": "轉念不是自我欺騙，而是練習找到更有建設性的視角。", "mind": "面對塞車、被拒絕、計畫被打亂，轉念能力決定你是被困住、還是很快找到新解法。", "speech": "轉念：改變看事情的角度", "keyword": "轉念", "oneline": "換個角度看，路就多一條。", "ext": [{"t": "當下的力量", "a": "艾克哈特‧托勒", "w": "轉換對當下的詮釋"}, {"t": "一念之轉", "a": "拜倫‧凱蒂", "w": "質疑念頭的方法"}, {"t": "活出意義來", "a": "維克多‧弗蘭克", "w": "選擇回應的態度"}, {"t": "蛤蟆先生去看心理師", "a": "羅伯‧狄保德", "w": "重新框定情緒"}, {"t": "真實的快樂", "a": "馬汀‧塞利格曼", "w": "培養正向視角"}], "syn": {"pr": ["困住人的是詮釋而非事件", "轉念非自欺", "更有建設性的視角可選"], "fw": "覺察念頭→質疑→換框的轉念框架。", "st": ["遇負面情緒先抓出背後念頭", "問『還有沒有別的解讀』", "換成更有建設性的說法", "記錄有效的轉念句"], "lk": "歸入「情緒心理」節點；與《逆思維》《你的問題不是問題》串讀，把『換個想法』接到『重新定義問題』。", "sm": "換個角度看，路就多一條。"}, "beginner": false}, {"name": "這僅有一次的人生，一定要讀蘇東坡", "author": "費勇", "cat": "人生哲學", "core": "透過蘇東坡的人生與文字，談豁達、逆境與生活智慧。", "key": "也無風雨也無晴。", "claim": "在無常與貶謫中保持豁達，是中國式的人生最高修養。", "think": "蘇東坡示範了「把苦日子過成詩」的能力，這是一種主動的生活態度。", "mind": "古典人物的逆境智慧，可成為現代人面對職場與人生起伏的精神資源。", "speech": "向蘇東坡學豁達", "keyword": "豁達", "oneline": "在風雨中，仍把日子過成詩。", "ext": [{"t": "沉思錄", "a": "馬可‧奧理略", "w": "逆境中的修養"}, {"t": "道德經", "a": "老子", "w": "順應與豁達"}, {"t": "活出意義來", "a": "維克多‧弗蘭克", "w": "苦難中的意義"}, {"t": "莊子", "a": "莊周", "w": "超脫得失"}, {"t": "最後14堂星期二的課", "a": "米奇‧艾爾邦", "w": "看淡人生起伏"}], "syn": {"pr": ["在無常中保持豁達", "把苦日子過成詩", "逆境是修養的試金石"], "fw": "以歷史人物的處世智慧對照自身逆境的借鏡框架。", "st": ["遇逆境時找一個典範人物對照", "練習在限制中找可享受的事", "把抱怨改寫成幽默", "記下屬於自己的豁達句"], "lk": "歸入「人生哲學」節點；與《我可能錯了》《活出意義來》串讀，看古今中外如何面對苦難。", "sm": "在風雨中，仍把日子過成詩。"}, "beginner": false}, {"name": "你與幸福的距離，只有2小時", "author": "今井孝", "cat": "時間管理", "core": "用小幅的時間投入，逐步把生活推向更幸福的狀態。", "key": "幸福不必等大改變，從小投入開始。", "claim": "幸福可以被刻意設計，而非被動等待。", "think": "把「等有空再幸福」改成「現在挪出一點時間」，門檻其實很低。", "mind": "在忙碌的工作與家務之間，主動為自己排一點點幸福時段，是長期不被掏空的關鍵。", "speech": "每天 2 小時，靠近幸福", "keyword": "投入", "oneline": "幸福是擠出來的，不是等出來的。", "ext": [{"t": "少，但是更好", "a": "葛瑞格‧麥基昂", "w": "專注真正重要的事"}, {"t": "最有生產力的一年", "a": "克里斯‧貝利", "w": "小投入大改變"}, {"t": "真實的快樂", "a": "馬汀‧塞利格曼", "w": "可設計的幸福"}, {"t": "心流", "a": "米哈里‧契克森米哈伊", "w": "投入帶來幸福"}, {"t": "深度工作力", "a": "卡爾‧紐波特", "w": "高品質時間"}], "syn": {"pr": ["幸福可被刻意設計", "小投入即可推進", "別等大改變"], "fw": "每日挪出小幅時間累積幸福的設計框架。", "st": ["每天規劃一段專屬的幸福時段", "列出低成本能帶來愉悅的事", "把『等有空』改成『現在排進去』", "每週檢視幸福投入是否落實"], "lk": "歸入「時間管理／幸福」節點；與《北歐時間》《人生4千個禮拜》串讀，從『加幸福』到『接受有限』形成完整觀。", "sm": "幸福是擠出來的，不是等出來的。"}, "beginner": false}, {"name": "把時間買回來", "author": "丹‧馬特爾", "cat": "時間管理", "core": "以委派、流程化與高價值時間運用，從忙碌中買回自由。", "key": "別花一小時做別人花十分鐘能做的事。", "claim": "成長的瓶頸不是努力不夠，而是不會把時間用在最高價值的事上。", "think": "用「時薪」概念檢視每件事，能逼自己停止親力親為的無效忙碌。", "mind": "主管的價值在於授權與制度化，把自己從事務性工作中解放出來。", "speech": "把時間，買回來", "keyword": "委派", "oneline": "把低價值的事交出去，買回你的時間。", "ext": [{"t": "一週工作4小時", "a": "提摩西‧費里斯", "w": "委派與自動化"}, {"t": "少，但是更好", "a": "葛瑞格‧麥基昂", "w": "聚焦高價值"}, {"t": "搞定！", "a": "大衛‧艾倫", "w": "流程化工作"}, {"t": "深度工作力", "a": "卡爾‧紐波特", "w": "保護高價值時間"}, {"t": "與成功有約", "a": "史蒂芬‧柯維", "w": "要事第一"}], "syn": {"pr": ["把時間用在最高價值處", "委派與流程化", "用時薪檢視每件事"], "fw": "用『買回時間矩陣』分類並外包低價值工作的框架。", "st": ["列出最耗時但低價值的工作", "逐項建立可交付的流程", "把可委派的事交出去", "把省下的時間投入高價值工作"], "lk": "歸入「時間管理」節點；與《生時間》《少，但是更好》串讀，從『刪減』到『委派』到『聚焦』。", "sm": "把低價值的事交出去，買回你的時間。"}, "beginner": false}, {"name": "AI世界的底層邏輯與生存法則", "author": "程世嘉", "cat": "AI與數位", "core": "談 AI 時代的技術趨勢、應用邏輯與個人／組織的生存策略。", "key": "AI 不會取代你，但會用 AI 的人會。", "claim": "理解 AI 的底層邏輯，比追逐單一工具更重要。", "think": "與其焦慮被取代，不如思考如何把 AI 變成自己的能力槓桿。", "mind": "政府數位轉型的關鍵，是讓制度與人才同步適應 AI，而非只導入工具。", "speech": "AI 時代的生存法則", "keyword": "適應", "oneline": "懂底層邏輯，才不會被工具淘汰。", "ext": [{"t": "21世紀的21堂課", "a": "哈拉瑞", "w": "面對 AI 的關鍵課題"}, {"t": "AI 2041", "a": "李開復、陳楸帆", "w": "AI 應用的未來"}, {"t": "第二次機器時代", "a": "布林優夫森、麥克費", "w": "科技與經濟轉型"}, {"t": "生命3.0", "a": "麥克斯‧鐵馬克", "w": "AI 時代的人類角色"}, {"t": "注意力商人", "a": "吳修銘", "w": "數位時代的注意力"}], "syn": {"pr": ["懂底層邏輯勝過追工具", "AI 是能力放大器", "個人與組織都需主動適應"], "fw": "以 AI 趨勢×個人定位×組織轉型三層的生存框架。", "st": ["釐清哪些工作會被 AI 放大或取代", "把 AI 納入自己的核心工作流", "持續更新對技術趨勢的認知", "培養 AI 難以取代的判斷與整合力"], "lk": "歸入「AI 與數位」節點；與《一本搞定ChatGPT》串讀，一本談『為何』、一本談『如何』，互補成完整 AI 素養。", "sm": "懂底層邏輯，才不會被工具淘汰。"}, "beginner": false}, {"name": "你的問題不是問題", "author": "李崇義", "cat": "情緒心理", "core": "以諮商對話協助重新定義問題，看見限制背後的真正原因。", "key": "問題的背後，常藏著更深的需要。", "claim": "許多困擾的根源不在表面問題，而在未被看見的內在需求。", "think": "先把問題「重新定義」，往往比急著解決更關鍵。", "mind": "生活中的卡關也一樣——常常是問錯了問題；先重新框定，解法才會對。", "speech": "先找對問題，再談解法", "keyword": "重新定義", "oneline": "看見問題背後的需要，答案才浮現。", "ext": [{"t": "蛤蟆先生去看心理師", "a": "羅伯‧狄保德", "w": "看見問題背後"}, {"t": "也許你該找人聊聊", "a": "蘿蕊‧葛利布", "w": "重新定義困境"}, {"t": "非暴力溝通", "a": "馬歇爾‧盧森堡", "w": "看見真正的需要"}, {"t": "當下的力量", "a": "艾克哈特‧托勒", "w": "與問題共處"}, {"t": "一念之轉", "a": "拜倫‧凱蒂", "w": "拆解問題念頭"}], "syn": {"pr": ["問題背後常藏更深需要", "重新定義先於解決", "限制背後有原因"], "fw": "從表面問題挖到真正需求的重新框定框架。", "st": ["遇困擾先問『真正困住我的是什麼』", "區分表面問題與底層需求", "重新定義問題再找解法", "用對話釐清而非急著解決"], "lk": "歸入「情緒心理／問題解決」節點；與《轉念的力量》《逆思維》串讀，把『換想法』升級為『換問題』。", "sm": "看見問題背後的需要，答案才浮現。"}, "beginner": false}, {"name": "逆思維", "author": "亞當‧格蘭特", "cat": "策略決策", "core": "鼓勵保留懷疑、修正信念、像科學家一樣思考，避免僵化。", "key": "像科學家一樣思考，而非傳教士、檢察官或政客。", "claim": "重新思考的能力，比堅持己見更能帶來成長。", "think": "承認「我可能錯了」不是軟弱，而是學習的入口。", "mind": "制度若無法自我修正，終將僵化；組織需要刻意培養「重新思考」的文化。", "speech": "重新思考的力量", "keyword": "重思", "oneline": "勇於修正信念，比固守正確更聰明。", "ext": [{"t": "思考，快與慢", "a": "丹尼爾‧康納曼", "w": "重新檢視思考"}, {"t": "給予", "a": "亞當‧格蘭特", "w": "同作者的人際洞察"}, {"t": "黑天鵝", "a": "納西姆‧塔雷伯", "w": "質疑既有信念"}, {"t": "真確", "a": "漢斯‧羅斯林", "w": "修正錯誤認知"}, {"t": "超預測", "a": "菲利普‧泰特洛克", "w": "不斷更新判斷"}], "syn": {"pr": ["像科學家一樣思考", "勇於重新思考", "從錯誤中更新信念"], "fw": "科學家／傳教士／檢察官／政客四種思考模式的自省框架。", "st": ["遇強烈主張時先問『我可能錯在哪』", "主動尋找反證而非佐證", "定期重新檢視核心信念", "把『改變想法』視為進步"], "lk": "「策略決策／認知」節點的核心；與《窮查理的普通常識》《我可能錯了》串讀，可從不同文化角度理解『謙遜的思考』。", "sm": "勇於修正信念，比固守正確更聰明。"}, "beginner": false}, {"name": "生時間", "author": "傑克‧納普、約翰‧澤拉斯基", "cat": "時間管理", "core": "重新設計時間與注意力，用「精華（Highlight）」與抗分心，奪回每日主導權。", "key": "每天選一個精華，全力以赴。", "claim": "忙碌的真正解方不是更有效率，而是更有意識地選擇焦點。", "think": "預設的科技與行程會偷走注意力；主動設計一天，才不被推著走。", "mind": "組織也需要為團隊「設計專注」，減少會議與雜訊對深度工作的侵蝕。", "speech": "設計你的一天，奪回注意力", "keyword": "焦點", "oneline": "每天先護住一個精華，再談其他。", "ext": [{"t": "深度工作力", "a": "卡爾‧紐波特", "w": "專注的深度工作"}, {"t": "少，但是更好", "a": "葛瑞格‧麥基昂", "w": "減法的專注"}, {"t": "搞定！", "a": "大衛‧艾倫", "w": "清空大腦待辦"}, {"t": "最有生產力的一年", "a": "克里斯‧貝利", "w": "時間與精力管理"}, {"t": "深度數位大掃除", "a": "卡爾‧紐波特", "w": "減少分心"}], "syn": {"pr": ["每天選一個精華全力以赴", "主動對抗預設分心", "設計一天而非被推著走"], "fw": "精華（Highlight）→雷射專注→反思的每日設計框架。", "st": ["每天早上選定一個『精華』", "移除手機與通知的預設干擾", "為精華排出受保護的時段", "睡前簡短反思當天成效"], "lk": "歸入「時間管理」節點；與《深度工作力》《把時間買回來》串讀，組成『專注×委派×減量』的時間系統。", "sm": "每天先護住一個精華，再談其他。"}, "beginner": false}, {"name": "建構這樣的團隊，多大的夢想都能實現", "author": "Chris岡崎", "cat": "領導團隊", "core": "談團隊文化、角色配置、溝通與共同目標的建立。", "key": "對的團隊，能放大夢想的尺度。", "claim": "成就大事靠的是團隊系統，而非個人英雄。", "think": "角色清楚、目標一致，團隊才能把個人能力相乘而非相抵。", "mind": "不管是工作專案、社團還是家庭活動，把不同個性的人組成有共同目標的團隊，事情才推得動。", "speech": "打造能實現夢想的團隊", "keyword": "團隊", "oneline": "先建對的團隊，夢想自然變大。", "ext": [{"t": "第五項修練", "a": "彼得‧聖吉", "w": "學習型組織"}, {"t": "心理安全感的力量", "a": "艾美‧艾德蒙森", "w": "敢言的團隊"}, {"t": "從A到A+", "a": "詹姆‧柯林斯", "w": "卓越團隊的條件"}, {"t": "最後吃，所以你贏", "a": "賽門‧西奈克", "w": "信任的團隊文化"}, {"t": "團隊領導的五大障礙", "a": "派屈克‧蘭奇歐尼", "w": "團隊失能與修復"}], "syn": {"pr": ["團隊系統勝過個人英雄", "角色清楚、目標一致", "文化決定戰力"], "fw": "目標→角色→溝通→文化的團隊建構框架。", "st": ["先講清楚共同目標與成功定義", "為每個成員界定清晰角色", "建立固定的溝通節奏", "刻意塑造可信任的團隊文化"], "lk": "歸入「領導團隊」節點；與《教練》《帶人，先讀這本書》串讀，把『建團隊』接到『帶人』。", "sm": "先建對的團隊，夢想自然變大。"}, "beginner": false}, {"name": "減法的教育", "author": "郝小萍", "cat": "人生哲學", "core": "主張教育減少干擾與過度要求，回到孩子真正需要的成長條件。", "key": "少一點，孩子反而長得更好。", "claim": "過度的安排與期待，可能扼殺孩子的內在動機。", "think": "做減法需要更大的信任與耐心，比一直加碼更難。", "mind": "訓練與制度設計同理——有時「拿掉不必要的」比「再加一項」更有效。", "speech": "教育的減法智慧", "keyword": "留白", "oneline": "拿掉多餘，成長才有空間。", "ext": [{"t": "心態致勝", "a": "卡蘿‧杜維克", "w": "培養成長心態"}, {"t": "讓天賦自由", "a": "肯‧羅賓森", "w": "尊重天賦的教育"}, {"t": "教養的迷思", "a": "茱蒂‧哈里斯", "w": "重新看教養影響"}, {"t": "跟阿德勒學正向教養", "a": "簡‧尼爾森", "w": "溫和而堅定"}, {"t": "自驅型成長", "a": "史帝克斯魯德、強森", "w": "給孩子自主權"}], "syn": {"pr": ["減少干擾勝過不斷加碼", "回到孩子真正的需要", "留白也是成長條件"], "fw": "先做減法、保留內在動機的教育框架。", "st": ["盤點目前過度的安排與要求", "刪掉非必要的干預", "把選擇權部分交還孩子", "觀察減法後的變化再調整"], "lk": "歸入「教育／人生哲學」節點；其『減法』思維與《少，但是更好》《人生4千個禮拜》相通，可跨域對照。", "sm": "拿掉多餘，成長才有空間。"}, "beginner": false}, {"name": "順勢合作", "author": "亞當‧卡漢", "cat": "領導團隊", "core": "強調跨界合作、找到共同利益，讓不同立場也能往前推進。", "key": "不必喜歡彼此，也能一起前進。", "claim": "困難的合作不靠統一立場，而靠共同行動。", "think": "當無法達成共識時，「先一起做」反而能創造新的可能。", "mind": "跟意見不同的同事、家人或鄰居一起完成一件事，本質就是與不完全認同的人合作把事做成。", "speech": "與不同立場的人，一起前進", "keyword": "協作", "oneline": "不求一致，但求一起把事做成。", "ext": [{"t": "第五項修練", "a": "彼得‧聖吉", "w": "系統性協作"}, {"t": "給予", "a": "亞當‧格蘭特", "w": "互利的合作"}, {"t": "哈佛這樣教談判力", "a": "費雪、尤瑞", "w": "找到共同利益"}, {"t": "引爆趨勢", "a": "麥爾坎‧葛拉威爾", "w": "推動改變的力量"}, {"t": "心理安全感的力量", "a": "艾美‧艾德蒙森", "w": "跨域協作基礎"}], "syn": {"pr": ["不必喜歡彼此也能前進", "靠共同行動而非共同立場", "在分歧中找共同利益"], "fw": "承認分歧→找共同利益→先一起行動的協作框架。", "st": ["先列出各方真正在意的利益", "找出最小可共同推進的行動", "擱置無法達成共識的部分", "用一次小合作建立互信"], "lk": "歸入「領導團隊／協作」節點；與《無限賽局》《給予》串讀，理解長期、互利的合作邏輯。", "sm": "不求一致，但求一起把事做成。"}, "beginner": false}, {"name": "無限賽局", "author": "賽門‧西奈克", "cat": "領導團隊", "core": "以長期思維經營「無限賽局」，靠信任、願景與韌性，而非短期輸贏。", "key": "有限賽局求贏，無限賽局求續。", "claim": "領導者該玩的是延續使命的無限賽局，而非追逐短期勝負。", "think": "用「無限思維」看待組織與職涯，許多短期得失就不再那麼重要。", "mind": "經營健康、婚姻與信任都是無限賽局——目標不是某次贏，而是這段關係能不能長久良好。", "speech": "用無限思維領導", "keyword": "延續", "oneline": "別只想贏這一局，要想把賽局玩下去。", "ext": [{"t": "最後吃，所以你贏", "a": "賽門‧西奈克", "w": "同作者的領導觀"}, {"t": "從A到A+", "a": "詹姆‧柯林斯", "w": "基業長青"}, {"t": "第五項修練", "a": "彼得‧聖吉", "w": "長期系統思考"}, {"t": "給予", "a": "亞當‧格蘭特", "w": "長期關係策略"}, {"t": "與成功有約", "a": "史蒂芬‧柯維", "w": "以終為始"}], "syn": {"pr": ["長期延續勝過短期輸贏", "以信任與願景驅動", "保持彈性與韌性"], "fw": "有限賽局 vs 無限賽局的長期思維框架。", "st": ["分辨眼前的事是有限或無限賽局", "為組織寫下值得延續的願景", "以長期利益檢視短期取捨", "建立可長存的信任機制"], "lk": "歸入「領導團隊」節點；與《找到你的為什麼》（同作者）串讀最順，可一次掌握其領導體系。", "sm": "別只想贏這一局，要把賽局玩下去。"}, "beginner": false}, {"name": "找到你的為什麼", "author": "賽門‧西奈克", "cat": "領導團隊", "core": "釐清個人或團隊的核心使命（Why），讓行動與信念對齊。", "key": "人們買的不是你做什麼，而是你為什麼做。", "claim": "從「為什麼」出發，才能持久激勵自己與他人。", "think": "找到 Why 不是口號，而是讓所有決策有一致依據的根。", "mind": "一個家庭或團隊若能說清楚「我們為何在一起、為何而做」，向心力與認同都會更穩固。", "speech": "從你的為什麼出發", "keyword": "使命", "oneline": "先找到 Why，How 與 What 自然清楚。", "ext": [{"t": "最後吃，所以你贏", "a": "賽門‧西奈克", "w": "同作者的領導延伸"}, {"t": "從A到A+", "a": "詹姆‧柯林斯", "w": "核心理念驅動"}, {"t": "與成功有約", "a": "史蒂芬‧柯維", "w": "使命與原則"}, {"t": "給予", "a": "亞當‧格蘭特", "w": "使命型動機"}, {"t": "活出意義來", "a": "維克多‧弗蘭克", "w": "找到意義之源"}], "syn": {"pr": ["從為什麼出發", "Why 是一切決策的根", "使命驅動持久動力"], "fw": "黃金圈（Why→How→What）的使命框架。", "st": ["寫下個人或團隊的核心 Why", "用 Why 檢視重要決策是否一致", "把 Why 講成能感染人的故事", "定期回到 Why 校準方向"], "lk": "歸入「領導團隊」節點；與《無限賽局》（同作者）並讀，可串成『使命×長期』的完整領導觀。", "sm": "先找到 Why，How 與 What 自然清楚。"}, "beginner": false}, {"name": "失控的焦慮世代", "author": "強納森‧海德", "cat": "AI與數位", "core": "分析智慧型手機與社群媒體，如何與青少年焦慮、憂鬱攀升相關。", "key": "我們把童年從遊戲式改成了螢幕式。", "claim": "以手機為基礎的童年，正在傷害青少年的心理健康。", "think": "本書把個人現象提升到世代與公衛層級，提醒結構性問題需要結構性對策。", "mind": "孩子的心理健康，和家庭的手機使用習慣與陪伴方式息息相關，值得每位家長正視。", "speech": "螢幕世代的心理健康危機", "keyword": "焦慮", "oneline": "重新設計童年，才能救回專注與心理健康。", "ext": [{"t": "深度數位大掃除", "a": "卡爾‧紐波特", "w": "重建與螢幕的關係"}, {"t": "注意力商人", "a": "吳修銘", "w": "注意力如何被掠奪"}, {"t": "監控資本主義時代", "a": "肖莎娜‧祖博夫", "w": "平台的影響"}, {"t": "為什麼要睡覺", "a": "馬修‧沃克", "w": "青少年身心健康"}, {"t": "自驅型成長", "a": "史帝克斯魯德、強森", "w": "重建自主與韌性"}], "syn": {"pr": ["手機式童年傷害心理健康", "結構問題需結構對策", "遊戲式成長不可少"], "fw": "以社會、學校、家庭多層次看青少年心理的公衛框架。", "st": ["檢視自己與孩子的螢幕使用結構", "用無螢幕活動取代部分時間", "區分『工具使用』與『被演算法綁架』", "支持以行動為基礎的成長環境"], "lk": "歸入「AI 與數位／公衛」節點；與《深度數位大掃除》《別對每件事都有反應》串讀，從社會到個人對治數位焦慮。", "sm": "重新設計童年，才能救回專注與心理健康。"}, "beginner": false}, {"name": "人生4千個禮拜", "author": "奧利佛‧柏克曼", "cat": "人生哲學", "core": "以有限壽命為前提，提醒人接受限制、專注真正重要的事。", "key": "人的一生只有約四千個星期。", "claim": "時間管理的真相是承認做不完，並勇敢取捨。", "think": "與多數效率書相反，本書要你放下「全部做完」的幻覺。", "mind": "接受有限，反而讓人更敢於對不重要的事說不、把心力投在關鍵處。", "speech": "接受有限，活出重點", "keyword": "有限", "oneline": "承認做不完，才會選對要做的事。", "ext": [{"t": "少，但是更好", "a": "葛瑞格‧麥基昂", "w": "承認有限、聚焦重點"}, {"t": "活出意義來", "a": "維克多‧弗蘭克", "w": "在有限中找意義"}, {"t": "深度工作力", "a": "卡爾‧紐波特", "w": "把時間投在深處"}, {"t": "別把你的錢留到死", "a": "比爾‧柏金斯", "w": "及時把握體驗"}, {"t": "沉思錄", "a": "馬可‧奧理略", "w": "面對生命的有限"}], "syn": {"pr": ["承認做不完", "接受有限才會取捨", "專注真正重要的事"], "fw": "以生命有限為前提、主動放棄的時間哲學框架。", "st": ["接受待辦永遠做不完的事實", "刻意選擇要『不做』的事", "一次只認真推進少數要事", "為重要但不緊急的事預留時間"], "lk": "歸入「人生哲學／時間」節點；與《生時間》《少，但是更好》串讀，從哲學到方法形成完整時間觀。", "sm": "承認做不完，才會選對要做的事。"}, "beginner": true}, {"name": "打造圖像腦", "author": "丹‧羅姆", "cat": "簡報表達", "core": "用圖像化思考、簡化結構與視覺表達來強化溝通。", "key": "能畫出來，就能說清楚。", "claim": "複雜想法透過簡單圖像，更容易被理解與記住。", "think": "視覺化是一種逼自己想清楚的工具——畫不出來，往往是還沒想透。", "mind": "跟不同背景的人說明想法時，一張圖往往能跨越隔閡、快速取得共識（簡報、教學、家庭討論都適用）。", "speech": "用一張圖說清楚一件事", "keyword": "視覺", "oneline": "先畫得出來，才講得明白。", "ext": [{"t": "簡報禪", "a": "賈爾‧雷諾茲", "w": "視覺化的簡報"}, {"t": "跟TED學表達", "a": "卡曼‧蓋洛", "w": "視覺與口語結合"}, {"t": "餐巾紙的背後", "a": "丹‧羅姆", "w": "同作者的視覺思考"}, {"t": "創意黏力學", "a": "奇普‧希思、丹‧希思", "w": "讓概念清楚易記"}, {"t": "設計的心理學", "a": "唐‧諾曼", "w": "好設計的原理"}], "syn": {"pr": ["能畫出來就能說清楚", "圖像強化理解與記憶", "視覺是想清楚的工具"], "fw": "用簡單圖像拆解並表達複雜想法的視覺思考框架。", "st": ["把複雜想法先畫成一張草圖", "用圖像取代部分文字說明", "為關鍵概念設計視覺隱喻", "畫不出來時回頭釐清邏輯"], "lk": "歸入「簡報表達」節點；與《上台的技術》《說服》串讀，把『視覺×口語×說服』整合成表達系統。", "sm": "先畫得出來，才講得明白。"}, "beginner": false}, {"name": "格局", "author": "喬潔", "cat": "認知洞察", "core": "提升視野、判斷框架與做事層次，拉高看問題的高度。", "key": "格局決定結局。", "claim": "看問題的高度，決定你能解決問題的層次。", "think": "格局不是空談——它表現在你願意為多長遠、多大範圍負責。", "mind": "一個人的格局，影響的是你願意為多長遠、照顧到多少人著想——從家庭到社區都是。", "speech": "把格局，做大一點", "keyword": "視野", "oneline": "站得高一點，路就看得遠一點。", "ext": [{"t": "思考，快與慢", "a": "丹尼爾‧康納曼", "w": "升級判斷層次"}, {"t": "真確", "a": "漢斯‧羅斯林", "w": "用全局看世界"}, {"t": "異數", "a": "麥爾坎‧葛拉威爾", "w": "看見成功的結構"}, {"t": "從A到A+", "a": "詹姆‧柯林斯", "w": "長線的高度"}, {"t": "與成功有約", "a": "史蒂芬‧柯維", "w": "格局與原則"}], "syn": {"pr": ["看問題的高度決定解法層次", "為更長遠更大範圍負責", "視野可被刻意拉高"], "fw": "從個人→組織→長期的層次拉升框架。", "st": ["遇問題先拉高一個層次再看", "問『這對三年後有何影響』", "主動接觸更高視野的人與資訊", "把短期取捨放進長期脈絡"], "lk": "歸入「認知洞察」節點；與《眼界》《見識》同源，三本可比較『格局／眼界／見識』細微差異後整合成一套認知升級觀。", "sm": "站得高一點，路就看得遠一點。"}, "beginner": false}, {"name": "初心", "author": "陌漢", "cat": "自我成長", "core": "談回到本心、維持純粹動機與長期穩定。", "key": "勿忘初心，方得始終。", "claim": "在長路上不忘最初的動機，是持續前進的力量。", "think": "當工作變得熟練甚至倦怠，回到初心能重新點燃意義感。", "mind": "工作與生活最容易在日復一日的磨損中忘了初衷，定期校準初心，是一種對自己的維護。", "speech": "勿忘初心", "keyword": "初心", "oneline": "記得為何出發，才走得長遠。", "ext": [{"t": "禪者的初心", "a": "鈴木俊隆", "w": "回到初學者之心"}, {"t": "活出意義來", "a": "維克多‧弗蘭克", "w": "守住核心動機"}, {"t": "當下的力量", "a": "艾克哈特‧托勒", "w": "回到當下純粹"}, {"t": "心流", "a": "米哈里‧契克森米哈伊", "w": "純粹投入的狀態"}, {"t": "牧羊少年奇幻之旅", "a": "保羅‧科爾賀", "w": "不忘最初的夢"}], "syn": {"pr": ["不忘最初動機", "維持純粹", "長期穩定靠校準"], "fw": "定期回到初心校準方向的自我維護框架。", "st": ["寫下當初投入的理由", "倦怠時回看初心", "用初心檢視是否偏離", "定期更新並重述初心"], "lk": "歸入「自我成長」節點；與《找到你的為什麼》《禪者的初心》串讀，把『初心』接到『使命』與『禪修』。", "sm": "記得為何出發，才走得長遠。"}, "beginner": false}, {"name": "給40歲的嶄新開始", "author": "松浦彌太郎", "cat": "人生哲學", "core": "以中年轉場為題，整理人生方向、工作與生活的重整。", "key": "四十歲，是重新出發的起點。", "claim": "中年不是下坡，而是更清楚自己後重新設計人生的時機。", "think": "把四十歲當成「上半場覆盤、下半場重設」的節點，會更從容。", "mind": "職涯中段的價值重整，往往讓人把心力投向真正重要的長期目標。", "speech": "四十歲，嶄新的開始", "keyword": "重整", "oneline": "中年不是結束，是更清醒的開始。", "ext": [{"t": "中年之路", "a": "詹姆斯‧霍利斯", "w": "中年的心理轉化"}, {"t": "別把你的錢留到死", "a": "比爾‧柏金斯", "w": "重新規劃下半場"}, {"t": "少，但是更好", "a": "葛瑞格‧麥基昂", "w": "重整人生焦點"}, {"t": "與成功有約", "a": "史蒂芬‧柯維", "w": "重建原則"}, {"t": "活出意義來", "a": "維克多‧弗蘭克", "w": "重尋意義"}], "syn": {"pr": ["中年是重新設計的時機", "上半場覆盤、下半場重設", "從容重整方向"], "fw": "以中年為節點的人生重設框架。", "st": ["盤點上半場的得失與資源", "重新定義下半場的優先事項", "刪掉不再適合的承諾", "為新方向訂一個小起點"], "lk": "歸入「人生哲學／中年」節點；與《40歲，好日子才開始》《中年之路》串讀，可多角度理解中年轉場。", "sm": "中年不是結束，是更清醒的開始。"}, "beginner": false}, {"name": "別對每件事都有反應", "author": "枡野俊明", "cat": "情緒心理", "core": "放下過度反應，讓心更安定、情緒更少被外境牽動（禪的視角）。", "key": "不是每件事，都值得你的反應。", "claim": "心的安定來自選擇性地不回應無謂的刺激。", "think": "在資訊與情緒過載的時代，「不反應」本身就是一種能力。", "mind": "第一線與高壓決策者尤其需要這種「留白」，避免被雜訊耗盡能量。", "speech": "安定心的禪式練習", "keyword": "安定", "oneline": "少一點反應，多一分清明。", "ext": [{"t": "當下的力量", "a": "艾克哈特‧托勒", "w": "安住於當下"}, {"t": "禪者的初心", "a": "鈴木俊隆", "w": "禪式的安定"}, {"t": "一念之轉", "a": "拜倫‧凱蒂", "w": "不被念頭牽動"}, {"t": "沉思錄", "a": "馬可‧奧理略", "w": "控制可控之事"}, {"t": "蛤蟆先生去看心理師", "a": "羅伯‧狄保德", "w": "減少情緒內耗"}], "syn": {"pr": ["不是每件事都值得反應", "心安來自選擇性回應", "留白是一種能力"], "fw": "以禪的視角篩選刺激、保留心力的框架。", "st": ["遇刺激先暫停三秒再決定回不回應", "刻意對無謂的事不反應", "減少接收雜訊的來源", "每天留一段安靜獨處"], "lk": "歸入「情緒心理」節點；與《為何一流的人不會有壓力》《我可能錯了》串讀，組成『安定心』的修練組合。", "sm": "少一點反應，多一分清明。"}, "beginner": true}, {"name": "改變人生的68個想法", "author": "曾小歌", "cat": "自我成長", "core": "以短篇觀念整理人生、工作、習慣與心態的調整。", "key": "小觀念，常帶來大轉變。", "claim": "持續吸收與實踐微小的好觀念，能累積成人生的改變。", "think": "短篇型書籍適合「每天一則、挑一則實踐」，重在落地而非讀完。", "mind": "觀念的更新如同系統升級，長期能改變判斷與行為的預設值。", "speech": "用小觀念，撐起大改變", "keyword": "觀念", "oneline": "一次換一個想法，慢慢長成新的人。", "ext": [{"t": "與成功有約", "a": "史蒂芬‧柯維", "w": "可實踐的原則"}, {"t": "心態致勝", "a": "卡蘿‧杜維克", "w": "轉換心態"}, {"t": "牧羊少年奇幻之旅", "a": "保羅‧科爾賀", "w": "啟發式人生觀"}, {"t": "沉思錄", "a": "馬可‧奧理略", "w": "短語式智慧"}, {"t": "活出意義來", "a": "維克多‧弗蘭克", "w": "觀念帶來改變"}], "syn": {"pr": ["小觀念帶來大轉變", "重在落地而非讀完", "持續更新觀念"], "fw": "每次內化一個觀念、逐步升級的觀念更新框架。", "st": ["每天挑一則觀念實踐", "記錄哪則觀念真正有用", "把有效觀念寫成自己的版本", "定期淘汰過時的想法"], "lk": "歸入「自我成長」節點；屬『觀念集合』型，可作為串聯其他書的索引——每則觀念都能延伸到一本專書。", "sm": "一次換一個想法，慢慢長成新的人。"}, "beginner": false}, {"name": "彈性習慣", "author": "史蒂芬‧蓋斯", "cat": "習慣行動", "core": "主張可持續比完美更重要，讓習慣能依情境彈性調整。", "key": "完成，永遠勝過完美。", "claim": "設定彈性的最低標準，能讓習慣在現實波動中存活。", "think": "全有全無的高標準最容易讓人中斷；彈性才有續航力。", "mind": "制度設計也該保留彈性空間，避免一刀切的剛性規則無法落地。", "speech": "彈性，讓習慣活下來", "keyword": "彈性", "oneline": "設下做得到的低標，才能持續。", "ext": [{"t": "為什麼我們這樣生活，那樣工作", "a": "查爾斯‧杜希格", "w": "習慣的彈性運作"}, {"t": "輕鬆駕馭意志力", "a": "凱莉‧麥高尼格", "w": "可持續的自制"}, {"t": "驅動力", "a": "丹尼爾‧品克", "w": "維持動機"}, {"t": "恆毅力", "a": "安琪拉‧達克沃斯", "w": "長期堅持"}, {"t": "心態致勝", "a": "卡蘿‧杜維克", "w": "彈性看待失敗"}], "syn": {"pr": ["可持續勝過完美", "設可達成的低標", "依情境調整"], "fw": "設定彈性最低標準、保留續航力的習慣框架。", "st": ["為每個習慣設『迷你/正常/進階』三檔", "狀態差時只求完成迷你版", "記錄連續完成天數", "避免全有全無的中斷"], "lk": "歸入「習慣行動」節點；與《原子習慣》互補，一個重系統、一個重彈性，並讀可平衡剛性與續航。", "sm": "設下做得到的低標，才能持續。"}, "beginner": false}, {"name": "眼界", "author": "陌漢", "cat": "認知洞察", "core": "擴大視野、提升認知，避免狹隘判斷。", "key": "眼界，決定你的世界。", "claim": "見過更大的世界，才不會被既有框架困住。", "think": "眼界的拓展靠主動接觸異質的人、事、觀點。", "mind": "旅行、跨領域學習、認識不同圈子的人，正是拓展眼界、跳出同溫層的好途徑。", "speech": "打開你的眼界", "keyword": "眼界", "oneline": "看得越廣，判斷越不偏。", "ext": [{"t": "真確", "a": "漢斯‧羅斯林", "w": "用事實開眼界"}, {"t": "人類大歷史", "a": "哈拉瑞", "w": "拉高歷史視野"}, {"t": "異數", "a": "麥爾坎‧葛拉威爾", "w": "看見隱形脈絡"}, {"t": "思考，快與慢", "a": "丹尼爾‧康納曼", "w": "看清思考盲點"}, {"t": "黑天鵝", "a": "納西姆‧塔雷伯", "w": "拓展對風險的認知"}], "syn": {"pr": ["眼界決定世界", "主動接觸異質", "避免狹隘判斷"], "fw": "以多元接觸拓展認知邊界的框架。", "st": ["定期接觸不同領域的人事物", "刻意閱讀與己見相左的觀點", "出走熟悉環境體驗差異", "把新見聞連回既有知識"], "lk": "歸入「認知洞察」節點；與《格局》《見識》同源，並讀可整合成一套『認知升級』體系。", "sm": "看得越廣，判斷越不偏。"}, "beginner": false}, {"name": "策略", "author": "戈迪皎", "cat": "策略決策", "core": "聚焦策略思考、資源配置與達成目標的路徑設計。", "key": "策略是選擇不做什麼。", "claim": "好策略的核心是聚焦與取捨，而非面面俱到。", "think": "許多失敗不是缺努力，而是缺乏清楚的取捨。", "mind": "時間和金錢都有限，策略思維決定你能不能把力氣用在最關鍵的事上，而不是樣樣都想抓。", "speech": "策略，就是學會取捨", "keyword": "取捨", "oneline": "先決定不做什麼，再決定全力做什麼。", "ext": [{"t": "好策略，壞策略", "a": "理查‧魯梅特", "w": "策略的核心"}, {"t": "競爭策略", "a": "麥可‧波特", "w": "產業競爭分析"}, {"t": "從A到A+", "a": "詹姆‧柯林斯", "w": "長期策略執行"}, {"t": "藍海策略", "a": "金偉燦、莫伯尼", "w": "開創新市場"}, {"t": "思考，快與慢", "a": "丹尼爾‧康納曼", "w": "策略決策心理"}], "syn": {"pr": ["策略是學會取捨", "聚焦勝過面面俱到", "先定不做什麼"], "fw": "目標→關鍵著力點→資源聚焦的策略框架。", "st": ["先寫下明確不做的事", "找出最關鍵的少數著力點", "把資源集中於高槓桿處", "定期檢視是否偏離焦點"], "lk": "歸入「策略決策」節點；與《勝算》《勝者謀局》串讀，從『判斷→佈局→取捨』形成策略鏈。", "sm": "先決定不做什麼，再全力做關鍵的事。"}, "beginner": false}, {"name": "教練", "author": "艾力克‧施密特、強納森‧羅森柏格、亞倫‧伊格爾", "cat": "領導團隊", "core": "以教練式領導協助團隊成長，重視提問、回饋、信任與授權（記述比爾‧坎貝爾）。", "key": "先解決團隊，問題自然會被解決。", "claim": "頂尖領導者也需要教練，而教練的核心是發展人。", "think": "教練式領導把焦點從「給答案」轉向「問對問題、放對人」。", "mind": "培育人才與建立信任，是組織長期戰力的根本投資。", "speech": "教練式領導：先發展人", "keyword": "教練", "oneline": "帶人先帶心，發展人就是發展組織。", "ext": [{"t": "最後吃，所以你贏", "a": "賽門‧西奈克", "w": "以人為本的領導"}, {"t": "從A到A+", "a": "詹姆‧柯林斯", "w": "卓越領導"}, {"t": "心理安全感的力量", "a": "艾美‧艾德蒙森", "w": "信任的環境"}, {"t": "高績效教練", "a": "約翰‧惠特默", "w": "教練式提問法"}, {"t": "給予", "a": "亞當‧格蘭特", "w": "發展他人的領導"}], "syn": {"pr": ["先發展人", "提問勝過給答案", "信任與授權是基礎"], "fw": "以教練式提問發展人、再解決問題的領導框架。", "st": ["遇問題先問而非直接給答案", "定期一對一傾聽部屬", "把成長機會授權出去", "用回饋培養而非考核"], "lk": "歸入「領導團隊」節點；與《帶人，先讀這本書》《建構這樣的團隊》串讀，組成完整的帶人方法。", "sm": "帶人先帶心，發展人就是發展組織。"}, "beginner": false}, {"name": "超覺靜坐的力量", "author": "鮑勃‧羅斯", "cat": "情緒心理", "core": "談冥想、放鬆與內在穩定，提升專注與身心恢復力。", "key": "靜下來，是為了走更遠。", "claim": "規律的靜坐能降低壓力、提升專注與恢復力。", "think": "靜坐不是逃避，而是主動為身心充電的科學化練習。", "mind": "高壓職務的長期續航，需要可量化、可持續的身心恢復方法。", "speech": "靜坐：高壓者的恢復技術", "keyword": "靜心", "oneline": "先安頓身心，效率與判斷才跟得上。", "ext": [{"t": "當下的力量", "a": "艾克哈特‧托勒", "w": "臨在與靜定"}, {"t": "禪者的初心", "a": "鈴木俊隆", "w": "禪修入門"}, {"t": "搜尋你內心的關鍵字", "a": "陳一鳴", "w": "正念與專注"}, {"t": "正念療癒力", "a": "喬‧卡巴金", "w": "正念減壓經典"}, {"t": "心流", "a": "米哈里‧契克森米哈伊", "w": "專注帶來的恢復"}], "syn": {"pr": ["靜定提升專注與恢復", "規律練習有科學效果", "靜坐是主動充電"], "fw": "以規律靜坐穩定身心、提升表現的恢復框架。", "st": ["每天固定時段靜坐數分鐘", "從專注呼吸開始入門", "記錄練習前後的狀態", "把靜坐排進日程而非有空才做"], "lk": "歸入「情緒心理／身心」節點；與《為何一流的人不會有壓力》《正念療癒力》串讀，建立壓力復原系統。", "sm": "先安頓身心，效率與判斷才跟得上。"}, "beginner": false}, {"name": "看出關鍵", "author": "艾美‧赫曼", "cat": "認知洞察", "core": "透過觀察訓練與細節辨識，提高判斷力與洞察力（以藝術品分析為法）。", "key": "看見，比看到更難。", "claim": "觀察力是可訓練的專業能力，能直接提升判斷品質。", "think": "我們常「看到卻沒看見」；刻意觀察能揭露被忽略的關鍵資訊。", "mind": "跟醫生描述症狀、看懂合約細節、留意孩子的狀況，都仰賴可被訓練的精準觀察力。", "speech": "訓練你的觀察力", "keyword": "觀察", "oneline": "練習看見別人忽略的細節。", "ext": [{"t": "思考，快與慢", "a": "丹尼爾‧康納曼", "w": "判斷與觀察偏誤"}, {"t": "真確", "a": "漢斯‧羅斯林", "w": "看見真實全貌"}, {"t": "黑天鵝", "a": "納西姆‧塔雷伯", "w": "注意被忽略的訊號"}, {"t": "雜訊", "a": "丹尼爾‧康納曼 等", "w": "判斷中的雜訊"}, {"t": "大腦當家", "a": "約翰‧麥迪納", "w": "注意力與感知"}], "syn": {"pr": ["看見比看到更難", "觀察力可被訓練", "細節揭露關鍵資訊"], "fw": "刻意觀察→描述→推論→驗證的觀察訓練框架。", "st": ["練習客觀描述所見而不急著詮釋", "區分『事實』與『推論』", "刻意尋找被忽略的細節", "用提問挖出未被注意的資訊"], "lk": "歸入「認知洞察」節點；與《細節》《思考，快與慢》串讀，把『觀察』接到『判斷偏誤』。", "sm": "練習看見別人忽略的細節。"}, "beginner": false}, {"name": "態度", "author": "高文斐", "cat": "自我成長", "core": "聚焦個人心態、做事姿態與面對變局的反應。", "key": "態度，決定你的高度。", "claim": "能力之外，態度往往才是長期勝出的關鍵變數。", "think": "態度不是口號，而是日復一日對待工作與人的選擇。", "mind": "在無法控制環境時，態度是少數仍由自己掌握的變數。", "speech": "態度，決定高度", "keyword": "態度", "oneline": "環境難控，態度可選。", "ext": [{"t": "心態致勝", "a": "卡蘿‧杜維克", "w": "心態決定表現"}, {"t": "與成功有約", "a": "史蒂芬‧柯維", "w": "由內而外的態度"}, {"t": "恆毅力", "a": "安琪拉‧達克沃斯", "w": "堅持的態度"}, {"t": "活出意義來", "a": "維克多‧弗蘭克", "w": "選擇態度的自由"}, {"t": "異數", "a": "麥爾坎‧葛拉威爾", "w": "態度與機會"}], "syn": {"pr": ["態度決定高度", "態度是日常的選擇", "環境難控、態度可選"], "fw": "以可控的態度回應不可控環境的框架。", "st": ["遇變局先選擇回應的態度", "把抱怨改成可行動的問題", "每天檢視自己的工作姿態", "用態度影響可影響的範圍"], "lk": "歸入「自我成長」節點；與《見識》《心態致勝》串讀，把『態度』接到『認知』與『心態』。", "sm": "環境難控，態度可選。"}, "beginner": false}, {"name": "專案管理革命", "author": "安東尼奧‧尼托-羅德里格茲", "cat": "商業組織", "core": "主張專案化是新的工作常態，強調專案管理的制度化、協作化與組織影響力。", "key": "未來的工作，都是專案。", "claim": "組織價值越來越透過專案實現，專案管理是核心領導能力。", "think": "把日常重要工作「專案化」（目標、時程、權責），執行品質會明顯提升。", "mind": "辦婚禮、搬家、規劃旅行、籌備一場活動，本質都是專案；用專案方法管理，能大幅提升成功率。", "speech": "用專案思維搞定生活大小事", "keyword": "專案", "oneline": "把重要的事，當成專案來管。", "ext": [{"t": "從A到A+", "a": "詹姆‧柯林斯", "w": "組織卓越"}, {"t": "重新定義公司", "a": "施密特、羅森柏格", "w": "Google 的管理機制"}, {"t": "精實創業", "a": "艾瑞克‧萊斯", "w": "快速迭代的執行"}, {"t": "競爭策略", "a": "麥可‧波特", "w": "策略落地"}, {"t": "團隊領導的五大障礙", "a": "派屈克‧蘭奇歐尼", "w": "專案團隊協作"}], "syn": {"pr": ["未來工作都是專案", "專案管理是核心領導力", "制度化提升成功率"], "fw": "目標→權責→時程→里程碑→覆盤的專案化框架。", "st": ["把重要工作改寫成有明確目標的專案", "設定權責、時程與里程碑", "建立固定的進度檢核", "結案後做覆盤累積經驗"], "lk": "歸入「商業組織」節點；與《亞馬遜2022》《勝算》串讀，把『機制化』從專案延伸到組織與決策。", "sm": "把重要的事，當成專案來管。"}, "beginner": false}, {"name": "北歐時間", "author": "日高Inko", "cat": "時間管理", "core": "簡化生活節奏、提升日常秩序與平衡感（北歐生活哲學）。", "key": "慢一點，反而更完整。", "claim": "刻意放慢與留白，能帶來更高品質的生活與工作。", "think": "效率不是唯一價值；本書提醒生活節奏本身也值得設計。", "mind": "長期高負荷工作者，更需要有意識地建立可持續的生活節奏。", "speech": "設計你的生活節奏", "keyword": "節奏", "oneline": "慢得有秩序，才走得久。", "ext": [{"t": "少，但是更好", "a": "葛瑞格‧麥基昂", "w": "生活的減法"}, {"t": "丹麥幸福學", "a": "麥克‧威肯", "w": "北歐生活哲學"}, {"t": "深度工作力", "a": "卡爾‧紐波特", "w": "有節奏的工作"}, {"t": "真實的快樂", "a": "馬汀‧塞利格曼", "w": "可設計的生活幸福"}, {"t": "心流", "a": "米哈里‧契克森米哈伊", "w": "投入而平衡的節奏"}], "syn": {"pr": ["慢得有秩序", "留白提升品質", "節奏值得設計"], "fw": "以可持續節奏取代盲目效率的生活設計框架。", "st": ["為一天設定可持續的節奏", "刻意保留留白時段", "區分高效時段與恢復時段", "定期檢視生活步調是否過載"], "lk": "歸入「時間管理／生活」節點；與《人生4千個禮拜》《少，但是更好》串讀，把『慢』接到『有限』與『減法』。", "sm": "慢得有秩序，才走得久。"}, "beginner": false}, {"name": "逆商", "author": "陌漢", "cat": "自我成長", "core": "討論挫折承受力（AQ）與逆境下的心理恢復。", "key": "順境靠運氣，逆境靠逆商。", "claim": "面對逆境的能力，比智商與情商更決定長期成就。", "think": "逆境是常態而非例外，把它當訓練場，成長最快。", "mind": "組織與國家的韌性，最終也是由成員的逆境應對能力所構成。", "speech": "逆境中的恢復力", "keyword": "逆商", "oneline": "逆境怎麼回應，決定你走多遠。", "ext": [{"t": "心態致勝", "a": "卡蘿‧杜維克", "w": "逆境中的成長"}, {"t": "恆毅力", "a": "安琪拉‧達克沃斯", "w": "面對挫折的毅力"}, {"t": "擁抱B選項", "a": "桑德伯格、格蘭特", "w": "逆境後的復原"}, {"t": "活出意義來", "a": "維克多‧弗蘭克", "w": "在苦難中堅持"}, {"t": "身體會記住", "a": "貝塞爾‧范德寇", "w": "壓力與身心恢復"}], "syn": {"pr": ["逆境應對決定成就", "挫折是常態與訓練場", "心理恢復可培養"], "fw": "控制感→歸因→延伸→耐力（CORE）的逆境應對框架。", "st": ["遇挫折先抓回可控的部分", "避免把失敗過度歸因於自己", "限制挫折影響的範圍與時間", "把逆境當成長機會記錄"], "lk": "歸入「自我成長」節點；與《極度韌性》《擁抱B選項》串讀，比較『逆商／韌性/復原』三種角度。", "sm": "逆境怎麼回應，決定你走多遠。"}, "beginner": false}, {"name": "勝者謀局", "author": "大齊", "cat": "策略決策", "core": "重點在局勢判斷、佈局能力與勝出思維。", "key": "先謀局，再下子。", "claim": "勝負在落子之前的佈局就已大致決定。", "think": "從「解眼前問題」升級到「佈整盤局」，是策略層次的躍遷。", "mind": "重要的事（談薪水、買房、轉職）需要佈局——預先安排時機、資源與支持你的人，而非臨場硬碰。", "speech": "謀局者勝", "keyword": "佈局", "oneline": "贏在落子之前的謀劃。", "ext": [{"t": "好策略，壞策略", "a": "理查‧魯梅特", "w": "佈局的策略邏輯"}, {"t": "競爭策略", "a": "麥可‧波特", "w": "競爭定位"}, {"t": "孫子兵法", "a": "孫武", "w": "謀略經典"}, {"t": "思考，快與慢", "a": "丹尼爾‧康納曼", "w": "局勢判斷心理"}, {"t": "超預測", "a": "菲利普‧泰特洛克", "w": "預判與佈局"}], "syn": {"pr": ["先謀局再下子", "勝負在佈局時已定", "佈局靠預先安排"], "fw": "看局→佈局→落子的全局策略框架。", "st": ["決策前先看清整盤局勢", "預先安排資源、時機與盟友", "為關鍵節點預留後手", "避免見招拆招的被動應戰"], "lk": "歸入「策略決策」節點；與《策略》《孫子兵法》串讀，把現代策略與兵法謀略對照。", "sm": "贏在落子之前的謀劃。"}, "beginner": false}, {"name": "為何一流的人不會有壓力", "author": "西脇俊二", "cat": "情緒心理", "core": "透過調整認知與身心狀態，降低壓力反應。", "key": "壓力來自詮釋，而非事件本身。", "claim": "頂尖表現者懂得管理對壓力的解讀與身心狀態。", "think": "壓力不必然有害；關鍵是如何詮釋與調節，而非消除它。", "mind": "高壓職務者若能系統化管理壓力反應，長期績效與健康都更穩。", "speech": "與壓力共處的技術", "keyword": "壓力", "oneline": "管理對壓力的解讀，而非逃避壓力。", "ext": [{"t": "輕鬆駕馭壓力", "a": "凱莉‧麥高尼格", "w": "重新看待壓力"}, {"t": "正念療癒力", "a": "喬‧卡巴金", "w": "正念減壓"}, {"t": "為什麼要睡覺", "a": "馬修‧沃克", "w": "身心修復"}, {"t": "心流", "a": "米哈里‧契克森米哈伊", "w": "壓力下的最佳狀態"}, {"t": "當下的力量", "a": "艾克哈特‧托勒", "w": "安定身心"}], "syn": {"pr": ["壓力來自詮釋", "可管理身心狀態", "壓力可被善用"], "fw": "認知重評 × 身心調節的壓力管理框架。", "st": ["把『威脅』重新詮釋為『挑戰』", "建立規律的身心恢復習慣", "在高壓前做呼吸與預演", "記錄並調整壓力觸發點"], "lk": "歸入「情緒心理」節點；與《輕鬆駕馭壓力》《超覺靜坐的力量》串讀，組成壓力管理的認知與身體雙軌。", "sm": "管理對壓力的解讀，而非逃避壓力。"}, "beginner": false}, {"name": "神經可塑性", "author": "妮可‧維諾拉", "cat": "自我成長", "core": "說明大腦可重塑，透過練習與環境改變行為與能力。", "key": "大腦終身都能改變。", "claim": "神經可塑性意味著任何年齡都能透過練習重塑能力。", "think": "「我就是這樣的人」常是藉口；大腦其實一直可被重新訓練。", "mind": "學習與訓練制度的設計，若理解大腦運作，效果會更扎實。", "speech": "大腦可以重新長出新能力", "keyword": "可塑", "oneline": "練習會改造大腦，改變從不嫌晚。", "ext": [{"t": "改變是大腦的天性", "a": "諾曼‧多吉", "w": "大腦重塑的證據"}, {"t": "大腦當家", "a": "約翰‧麥迪納", "w": "大腦運作法則"}, {"t": "運動改造大腦", "a": "約翰‧瑞提", "w": "運動與腦"}, {"t": "心態致勝", "a": "卡蘿‧杜維克", "w": "可改變的能力觀"}, {"t": "超速學習", "a": "史考特‧楊", "w": "用練習重塑能力"}], "syn": {"pr": ["大腦終身可改變", "練習與環境重塑行為", "改變從不嫌晚"], "fw": "以可塑性原理設計學習與行為改變的框架。", "st": ["用重複練習強化想要的迴路", "改變環境以觸發新行為", "給大腦足夠睡眠與運動", "相信能力可被訓練"], "lk": "歸入「自我成長／大腦」節點；與《刻意練習》《改變是大腦的天性》串讀，把方法接到神經科學依據。", "sm": "練習會改造大腦，改變從不嫌晚。"}, "beginner": false}, {"name": "用機智代替幼稚 全集", "author": "寒德娜", "cat": "溝通人際", "core": "以高情商與成熟表達取代情緒化反應，處理人際應對。", "key": "成熟，是用智慧回應而非情緒。", "claim": "成熟的人際應對，是把幼稚的情緒反應換成機智的回應。", "think": "面對挑釁與摩擦，「不被激怒」本身就是一種勝利。", "mind": "面對挑釁或衝突，成熟得體的應對往往比據理力爭更能達成目的（職場、家庭都受用）。", "speech": "用機智，化解人際難題", "keyword": "成熟", "oneline": "用智慧回應，別用情緒反應。", "ext": [{"t": "卡內基溝通與人際關係", "a": "戴爾‧卡內基", "w": "成熟的人際應對"}, {"t": "關鍵對話", "a": "科里‧派特森 等", "w": "高情商對話"}, {"t": "EQ", "a": "丹尼爾‧高曼", "w": "情緒成熟度"}, {"t": "影響力", "a": "羅伯特‧席爾迪尼", "w": "不被操弄的應對"}, {"t": "非暴力溝通", "a": "馬歇爾‧盧森堡", "w": "成熟表達"}], "syn": {"pr": ["用智慧回應而非情緒反應", "不被激怒就是勝利", "成熟是可學的應對"], "fw": "辨識挑釁→暫停→機智回應的成熟應對框架。", "st": ["被挑釁時先暫停不立即反應", "用提問或幽默化解張力", "區分對方的情緒與事實", "事後檢討更成熟的回應方式"], "lk": "歸入「溝通人際」節點；與《情商》《3秒搞定！職場心理學全事典》串讀，把成熟應對接到情緒能力與心理技巧。", "sm": "用智慧回應，別用情緒反應。"}, "beginner": false}, {"name": "亞馬遜2022", "author": "瑞姆‧夏藍、楊鳴", "cat": "商業組織", "core": "剖析亞馬遜的組織方法、管理文化與市場經營邏輯。", "key": "以顧客為中心，向後反推。", "claim": "亞馬遜的成功源於可複製的組織機制與文化，而非單一天才。", "think": "「逆向工作法」（從顧客需求倒推）是極具遷移性的方法論。", "mind": "做任何服務或產品——甚至安排一場聚會，從「對方要什麼」倒推，體驗都會更好。", "speech": "從顧客倒推的組織機制", "keyword": "機制", "oneline": "先想使用者要什麼，再倒推怎麼做。", "ext": [{"t": "創造與漫想", "a": "傑夫‧貝佐斯", "w": "貝佐斯的經營思維"}, {"t": "從A到A+", "a": "詹姆‧柯林斯", "w": "卓越企業機制"}, {"t": "精實創業", "a": "艾瑞克‧萊斯", "w": "顧客導向迭代"}, {"t": "重新定義公司", "a": "施密特、羅森柏格", "w": "科技公司管理"}, {"t": "跨越鴻溝", "a": "傑佛瑞‧摩爾", "w": "市場擴張策略"}], "syn": {"pr": ["以顧客為中心向後反推", "靠機制而非天才", "可複製的組織文化"], "fw": "逆向工作法（從顧客需求倒推）的組織機制框架。", "st": ["從使用者需求倒推產品與流程", "把成功經驗寫成可複製機制", "以長期思維容忍短期投入", "用書面敘事取代簡報做決策"], "lk": "歸入「商業組織」節點；與《創造與漫想》《精實創業》串讀，理解顧客導向與快速迭代。", "sm": "先想使用者要什麼，再倒推怎麼做。"}, "beginner": false}, {"name": "無路之路", "author": "保羅‧米勒德", "cat": "人生哲學", "core": "談非典型的成功路徑與職涯，跳脫既有框架的人生選擇。", "key": "沒有標準答案的人生，才是你的。", "claim": "在不確定的時代，自己鋪路比追隨既定路徑更務實。", "think": "當傳統路徑失靈，敢於探索無人走過的路，反而是優勢。", "mind": "制度與職涯的創新，常來自願意走「無路之路」的人。", "speech": "走一條屬於自己的路", "keyword": "探路", "oneline": "沒有現成的路，就自己鋪一條。", "ext": [{"t": "牧羊少年奇幻之旅", "a": "保羅‧科爾賀", "w": "走自己的路"}, {"t": "一週工作4小時", "a": "提摩西‧費里斯", "w": "非典型生活設計"}, {"t": "異數", "a": "麥爾坎‧葛拉威爾", "w": "成功路徑的多樣"}, {"t": "活出意義來", "a": "維克多‧弗蘭克", "w": "在不確定中前行"}, {"t": "與成功有約", "a": "史蒂芬‧柯維", "w": "自主設計人生"}], "syn": {"pr": ["自己鋪路勝過追隨既定路徑", "非典型路徑也能成功", "敢於探索未知"], "fw": "在不確定中自訂路徑的人生設計框架。", "st": ["盤點自己不走尋常路的優勢", "設計可承受風險的探索實驗", "用小步嘗試取代一次豪賭", "把每次探索的學習記錄下來"], "lk": "歸入「人生哲學／職涯」節點；與《跨能致勝》《一週工作4小時》串讀，理解非典型成功的可能。", "sm": "沒有現成的路，就自己鋪一條。"}, "beginner": false}, {"name": "40歲，好日子才開始", "author": "保阪隆", "cat": "人生哲學", "core": "以中年轉向為題，強調人生後半場仍可重整與再出發。", "key": "後半場，才是真正的主場。", "claim": "四十歲後若能調整心態與生活方式，反而能活得更好。", "think": "把年齡焦慮轉成「重新設計」的契機，心境會大不同。", "mind": "中年的經驗與資源，正是把人生與工作推向更高層次的本錢。", "speech": "好日子，從四十歲開始", "keyword": "後半場", "oneline": "中年不是衰退，是換檔加速。", "ext": [{"t": "中年之路", "a": "詹姆斯‧霍利斯", "w": "中年的轉化契機"}, {"t": "別把你的錢留到死", "a": "比爾‧柏金斯", "w": "下半場的規劃"}, {"t": "少，但是更好", "a": "葛瑞格‧麥基昂", "w": "重整人生重點"}, {"t": "與成功有約", "a": "史蒂芬‧柯維", "w": "重建生活原則"}, {"t": "活出意義來", "a": "維克多‧弗蘭克", "w": "重尋人生意義"}], "syn": {"pr": ["後半場是主場", "中年可重整再出發", "心態決定老後"], "fw": "以心態調整啟動人生後半場的框架。", "st": ["把年齡焦慮改寫成重設契機", "重新規劃健康、關係與興趣", "減少不必要的負擔", "為後半場設一個新目標"], "lk": "歸入「人生哲學／中年」節點；與《給40歲的嶄新開始》《中年之路》串讀，多角度看中年轉場。", "sm": "中年不是衰退，是換檔加速。"}, "beginner": false}, {"name": "我可能錯了", "author": "比約恩‧納提科‧林德勞", "cat": "人生哲學", "core": "以森林僧侶的人生故事，談放下執著、接受不確定、以覺察面對人生。", "key": "當你被想法折磨時，試著說：我可能錯了。", "claim": "放下「我一定對」的執著，能帶來自由與平靜。", "think": "這句簡單的咒語是極實用的情緒與衝突解法。", "mind": "承認不確定，是面對複雜世界與多元立場時最謙遜也最有力的姿態。", "speech": "我可能錯了：放下執著的智慧", "keyword": "謙卑", "oneline": "懂得說「我可能錯了」，心就自由了。", "ext": [{"t": "當下的力量", "a": "艾克哈特‧托勒", "w": "放下執著"}, {"t": "禪者的初心", "a": "鈴木俊隆", "w": "謙卑與覺察"}, {"t": "活出意義來", "a": "維克多‧弗蘭克", "w": "面對無常"}, {"t": "正念療癒力", "a": "喬‧卡巴金", "w": "覺察當下"}, {"t": "一念之轉", "a": "拜倫‧凱蒂", "w": "質疑我執"}], "syn": {"pr": ["放下『我一定對』的執著", "接受不確定", "以覺察面對人生"], "fw": "以一句『我可能錯了』化解執著與衝突的覺察框架。", "st": ["被念頭折磨時默念『我可能錯了』", "在衝突中先承認自己可能有誤", "練習覺察情緒而不被捲入", "為不確定保留空間"], "lk": "歸入「人生哲學」節點；與《逆思維》《別對每件事都有反應》串讀，把『謙遜思考』與『安定心』接在一起。", "sm": "懂得說『我可能錯了』，心就自由了。"}, "beginner": true}, {"name": "底層邏輯2", "author": "劉潤", "cat": "策略決策", "core": "延續前作框架，進一步談決策、商業與人生判斷的底層規律。", "key": "理解規律，才能預測與應對。", "claim": "掌握底層邏輯能讓判斷在不同情境間遷移。", "think": "系列閱讀的好處是讓思考框架越疊越穩、越用越熟。", "mind": "把底層邏輯內化成思考的預設值，面對新問題時反應會更快更準。", "speech": "用底層邏輯升級判斷", "keyword": "規律", "oneline": "看懂規律，萬變不離其宗。", "ext": [{"t": "思考，快與慢", "a": "丹尼爾‧康納曼", "w": "判斷的底層機制"}, {"t": "真確", "a": "漢斯‧羅斯林", "w": "事實導向思考"}, {"t": "黑天鵝", "a": "納西姆‧塔雷伯", "w": "風險的本質"}, {"t": "反脆弱", "a": "納西姆‧塔雷伯", "w": "系統韌性"}, {"t": "影響力", "a": "羅伯特‧席爾迪尼", "w": "人性規律"}], "syn": {"pr": ["規律可遷移", "框架越疊越穩", "內化成判斷預設值"], "fw": "延續底層邏輯、深化決策與商業判斷的框架。", "st": ["把常用規律整理成個人模型庫", "遇新問題先套既有框架", "在不同領域驗證同一規律", "把框架練到反射性使用"], "lk": "與《底層邏輯》連讀效果最佳；同屬「策略決策」節點，可作為理解劉潤思考體系的整套入口。", "sm": "看懂規律，萬變不離其宗。"}, "beginner": false}, {"name": "變成自己想要的大人", "author": "侯文詠", "cat": "自我成長", "core": "聚焦自我理解、成長與成為更成熟的自己。", "key": "長大，是慢慢變成自己喜歡的樣子。", "claim": "成熟不是符合他人期待，而是活成自己認同的模樣。", "think": "成為「想要的大人」需要先弄清楚自己到底想要什麼。", "mind": "自我認同的清晰度，決定一個人能否在外界壓力下保持方向。", "speech": "變成自己想要的大人", "keyword": "認同", "oneline": "先弄清楚要成為誰，再去成為他。", "ext": [{"t": "活出意義來", "a": "維克多‧弗蘭克", "w": "活出自我意義"}, {"t": "與成功有約", "a": "史蒂芬‧柯維", "w": "成為更成熟的人"}, {"t": "也許你該找人聊聊", "a": "蘿蕊‧葛利布", "w": "自我理解"}, {"t": "牧羊少年奇幻之旅", "a": "保羅‧科爾賀", "w": "成為理想的自己"}, {"t": "心態致勝", "a": "卡蘿‧杜維克", "w": "持續成長"}], "syn": {"pr": ["成熟是活成自己認同的樣子", "先弄清楚要什麼", "自我認同帶來方向"], "fw": "自我理解→定義理想自我→逐步靠近的成長框架。", "st": ["寫下『想要的大人』具體樣貌", "找出現況與理想的落差", "每次選擇都朝理想自我靠近", "定期回顧並修正定義"], "lk": "歸入「自我成長」節點；與《你想活出怎樣的人生？》《內在成就》串讀，貫穿自我認同的養成。", "sm": "先弄清楚要成為誰，再去成為他。"}, "beginner": false}, {"name": "情商", "author": "喬潔", "cat": "情緒心理", "core": "強調情緒辨識、調節與人際互動中的情緒能力。", "key": "情商，是把情緒變成助力的能力。", "claim": "情緒管理能力是職場與人生的關鍵軟實力。", "think": "情商不是壓抑情緒，而是辨識並善用情緒。", "mind": "領導與協調工作中，情緒能力往往比專業知識更影響成敗。", "speech": "情商：看不見的競爭力", "keyword": "情商", "oneline": "先管好情緒，再管好事情。", "ext": [{"t": "EQ", "a": "丹尼爾‧高曼", "w": "情緒智力經典"}, {"t": "非暴力溝通", "a": "馬歇爾‧盧森堡", "w": "情緒化的表達"}, {"t": "關鍵對話", "a": "科里‧派特森 等", "w": "高張力下的情緒"}, {"t": "影響力", "a": "羅伯特‧席爾迪尼", "w": "人際影響力"}, {"t": "卡內基溝通與人際關係", "a": "戴爾‧卡內基", "w": "人際情緒應對"}], "syn": {"pr": ["辨識並善用情緒", "情商是可學的軟實力", "情緒影響成敗"], "fw": "自我覺察→自我調節→同理→關係管理的情商框架。", "st": ["即時命名自己的情緒", "在反應前先暫停調節", "練習換位理解他人感受", "把情緒能量導向建設性行動"], "lk": "歸入「情緒心理」節點；與《EQ》《不否定的練習》串讀，把『情緒能力』接到『人際應對』。", "sm": "先管好情緒，再管好事情。"}, "beginner": false}, {"name": "致富心態", "author": "摩根‧豪瑟", "cat": "投資理財", "core": "談財務行為背後的心理、長期耐心與風險管理，致富靠行為而非聰明。", "key": "理財好壞，不在你多聰明，而在你怎麼行為。", "claim": "財富累積主要取決於行為與心態，而非知識或智商。", "think": "「夠了」的智慧、留安全邊際、複利的耐心，都是行為而非技巧。", "mind": "無論個人或國家財政，長期穩健的行為紀律勝過一時的精明操作。", "speech": "致富，靠的是行為", "keyword": "心態", "oneline": "財富是行為的結果，不是智商的結果。", "ext": [{"t": "漫步華爾街", "a": "柏頓‧墨基爾", "w": "長期投資觀"}, {"t": "思考，快與慢", "a": "丹尼爾‧康納曼", "w": "財務行為偏誤"}, {"t": "投資最重要的事", "a": "霍華‧馬克斯", "w": "風險與耐心"}, {"t": "約翰柏格投資常識", "a": "約翰‧柏格", "w": "低成本紀律"}, {"t": "跟錢好好相處", "a": "薇琪‧魯賓", "w": "金錢與幸福"}], "syn": {"pr": ["行為勝過聰明", "『夠了』的智慧", "留安全邊際與耐心"], "fw": "以財務行為與心態為核心、而非技巧的理財框架。", "st": ["先定義自己的『夠了』", "在財務決策中保留安全邊際", "用長期耐心對抗短期衝動", "避免為炫耀而消費"], "lk": "歸入「投資理財」節點；與《持續買進》《思考，快與慢》串讀，把『心態』接到『行為紀律』與『認知偏誤』。", "sm": "財富是行為的結果，不是智商的結果。"}, "beginner": true}, {"name": "跨能致勝", "author": "大衛‧艾波斯坦", "cat": "自我成長", "core": "主張別只迷信專精，跨域能力與廣泛經驗在複雜世界更具優勢。", "key": "通才，在複雜世界更能勝出。", "claim": "廣度與跨域連結，常比早期過度專精帶來更大優勢。", "think": "在多變的環境裡，能跨領域連結的人更能找到創新解法。", "mind": "把不同領域的經驗連起來（例如把料理的耐心用在工作、把運動的紀律用在理財），常能想出別人沒有的解法。", "speech": "通才的逆襲", "keyword": "跨域", "oneline": "廣度與連結，是複雜世界的優勢。", "ext": [{"t": "異數", "a": "麥爾坎‧葛拉威爾", "w": "成就的多元條件"}, {"t": "超速學習", "a": "史考特‧楊", "w": "跨域快速學習"}, {"t": "恆毅力", "a": "安琪拉‧達克沃斯", "w": "持續探索"}, {"t": "心態致勝", "a": "卡蘿‧杜維克", "w": "成長型廣度"}, {"t": "第二次機器時代", "a": "布林優夫森、麥克費", "w": "複雜世界的能力"}], "syn": {"pr": ["通才在複雜世界更有優勢", "跨域連結帶來創新", "別過早過度專精"], "fw": "廣度探索→跨域連結→延遲專精的能力發展框架。", "st": ["刻意接觸本業以外的領域", "練習把不同領域的概念連結", "延後鎖定單一專長", "用跨域視角找創新解法"], "lk": "歸入「自我成長／職涯」節點；與《刻意練習》形成張力對照（專精 vs 廣度），並讀可找到平衡點。", "sm": "廣度與連結，是複雜世界的優勢。"}, "beginner": false}, {"name": "人生的五種財富", "author": "薩希‧布魯姆", "cat": "人生哲學", "core": "把財富擴展成多面向：時間、社交、心理、身體與金錢，追求整體富足。", "key": "金錢只是五種財富之一。", "claim": "真正的富足是多種財富的平衡，而非只看銀行存款。", "think": "用「五種財富」盤點人生，能看出自己長期過度透支了哪一塊。", "mind": "職涯規劃若只追金錢與職位，容易在時間與健康上破產。", "speech": "重新定義你的財富", "keyword": "富足", "oneline": "金錢只是一種財富，別只顧著它。", "ext": [{"t": "別把你的錢留到死", "a": "比爾‧柏金斯", "w": "時間與體驗的價值"}, {"t": "跟錢好好相處", "a": "薇琪‧魯賓", "w": "金錢與生命能量"}, {"t": "活出意義來", "a": "維克多‧弗蘭克", "w": "意義型財富"}, {"t": "少，但是更好", "a": "葛瑞格‧麥基昂", "w": "平衡的取捨"}, {"t": "真實的快樂", "a": "馬汀‧塞利格曼", "w": "多面向幸福"}], "syn": {"pr": ["金錢只是財富之一", "時間、關係、身心都是財富", "追求整體富足"], "fw": "時間／社交／心理／身體／金錢的五維財富盤點框架。", "st": ["為五種財富各打一個現況分數", "找出長期被透支的那一塊", "為最弱項排入具體行動", "定期重新盤點平衡"], "lk": "歸入「人生哲學／財富」節點；與《納瓦爾寶典》《你要如何衡量你的人生？》串讀，建立完整的人生座標。", "sm": "金錢只是一種財富，別只顧著它。"}, "beginner": false}, {"name": "在黑暗中相遇", "author": "謝哲青", "cat": "人生哲學", "core": "以人生、旅行、閱讀與內在思索為主的散文式觀點。", "key": "在黑暗裡，反而看見光。", "claim": "低谷與孤獨，常是與自我深刻相遇的時刻。", "think": "散文式書寫提供的是陪伴與共鳴，適合在低潮時慢讀。", "mind": "人生的黑暗時刻若能轉化為理解與沉澱，會成為日後的力量。", "speech": "在黑暗中，遇見自己", "keyword": "沉澱", "oneline": "穿過黑暗，才看清自己要的光。", "ext": [{"t": "活出意義來", "a": "維克多‧弗蘭克", "w": "低谷中的意義"}, {"t": "最後14堂星期二的課", "a": "米奇‧艾爾邦", "w": "生命的沉思"}, {"t": "牧羊少年奇幻之旅", "a": "保羅‧科爾賀", "w": "旅程與內在"}, {"t": "凝視太陽", "a": "歐文‧亞隆", "w": "面對死亡與孤獨"}, {"t": "當下的力量", "a": "艾克哈特‧托勒", "w": "在黑暗中安定"}], "syn": {"pr": ["低谷是與自我相遇的時刻", "孤獨可被轉化", "沉澱帶來力量"], "fw": "以閱讀與旅行沉澱、轉化低潮的內省框架。", "st": ["低潮時給自己安靜的沉澱時間", "用書寫或旅行整理心緒", "把黑暗經驗轉成理解", "記下從低谷學到的事"], "lk": "歸入「人生哲學／散文」節點；與《我可能錯了》《活出意義來》串讀，看不同形式如何面對人生暗處。", "sm": "穿過黑暗，才看清自己要的光。"}, "beginner": false}, {"name": "帶人，先讀這本書", "author": "橋本拓也", "cat": "領導團隊", "core": "以主管帶人、溝通、激勵與團隊管理為主的實務指南。", "key": "帶人，先帶心。", "claim": "新手主管的關鍵是學會發展人，而非只盯績效。", "think": "從「做事」轉到「帶人」是職涯一大關卡，需要刻意學習。", "mind": "基層幹部的帶人能力，直接影響整個組織的執行品質與士氣。", "speech": "從做事到帶人", "keyword": "帶人", "oneline": "管事先管人，帶人先帶心。", "ext": [{"t": "從A到A+", "a": "詹姆‧柯林斯", "w": "卓越領導者特質"}, {"t": "最後吃，所以你贏", "a": "賽門‧西奈克", "w": "帶人先帶心"}, {"t": "高績效教練", "a": "約翰‧惠特默", "w": "教練式帶人"}, {"t": "心理安全感的力量", "a": "艾美‧艾德蒙森", "w": "建立信任"}, {"t": "團隊領導的五大障礙", "a": "派屈克‧蘭奇歐尼", "w": "團隊管理"}], "syn": {"pr": ["帶人先帶心", "從做事轉向帶人", "發展人勝過盯績效"], "fw": "目標對齊→溝通→激勵→授權的帶人框架。", "st": ["與部屬對齊目標與期待", "建立固定的溝通與回饋", "依個人特質給予激勵", "逐步授權培養獨立性"], "lk": "歸入「領導團隊」節點；與《教練》《建構這樣的團隊》串讀，組成新手主管的完整帶人路徑。", "sm": "管事先管人，帶人先帶心。"}, "beginner": false}, {"name": "見識", "author": "高文斐", "cat": "認知洞察", "core": "提升認知層次、判斷力與看問題的深度。", "key": "見識，決定你能走多遠。", "claim": "認知的深度與廣度，是長期競爭力的底層。", "think": "見識來自持續學習與反思，而非天生。", "mind": "人生選擇的品質，取決於你的見識與認知——看得越多越深，越不容易被話術或潮流牽著走。", "speech": "提升你的見識", "keyword": "見識", "oneline": "認知升級，路就更寬。", "ext": [{"t": "人類大歷史", "a": "哈拉瑞", "w": "拓展歷史認知"}, {"t": "真確", "a": "漢斯‧羅斯林", "w": "用數據看世界"}, {"t": "思考，快與慢", "a": "丹尼爾‧康納曼", "w": "深化判斷力"}, {"t": "異數", "a": "麥爾坎‧葛拉威爾", "w": "看見背後脈絡"}, {"t": "黑天鵝", "a": "納西姆‧塔雷伯", "w": "認知的盲點"}], "syn": {"pr": ["認知深度是長期競爭力", "見識靠學習與反思", "看問題的深度可培養"], "fw": "以持續學習與反思深化認知層次的框架。", "st": ["定期輸入高品質的知識來源", "針對重要議題深入而非淺嘗", "把學到的接回實務判斷", "透過反思把資訊變成見識"], "lk": "歸入「認知洞察」節點；與《格局》《眼界》同源，三本整合可形成一套『認知升級』體系。", "sm": "認知升級，路就更寬。"}, "beginner": false}, {"name": "細節", "author": "高文斐", "cat": "認知洞察", "core": "強調小地方決定成敗，重視執行與觀察的精準。", "key": "魔鬼藏在細節裡。", "claim": "成敗常取決於對細節的掌握與落實。", "think": "宏觀策略再好，也要靠細節執行才能兌現。", "mind": "公文、採購與專案的成敗，往往就藏在被忽略的細節中。", "speech": "細節決定成敗", "keyword": "細節", "oneline": "把細節做對，結果才會對。", "ext": [{"t": "創意黏力學", "a": "奇普‧希思、丹‧希思", "w": "關鍵細節的力量"}, {"t": "影響力", "a": "羅伯特‧席爾迪尼", "w": "細微之處的影響"}, {"t": "為什麼我們這樣生活，那樣工作", "a": "查爾斯‧杜希格", "w": "小習慣的關鍵"}, {"t": "設計的心理學", "a": "唐‧諾曼", "w": "細節決定體驗"}, {"t": "從A到A+", "a": "詹姆‧柯林斯", "w": "紀律與執行"}], "syn": {"pr": ["細節決定成敗", "重視執行與觀察", "小地方見真章"], "fw": "從關鍵細節落實策略的執行框架。", "st": ["找出影響成敗的關鍵細節", "為重要工作建立檢查清單", "在交付前做細節覆核", "把疏漏記錄成防呆機制"], "lk": "歸入「認知洞察／執行」節點；與《看出關鍵》《原子習慣》串讀，把『觀察細節』接到『落實執行』。", "sm": "把細節做對，結果才會對。"}, "beginner": false}, {"name": "說服", "author": "牛克錦", "cat": "簡報表達", "core": "以溝通技巧、論述設計與影響他人的方法為核心。", "key": "說服，是讓對方自己想通。", "claim": "有效的說服建立在理解對方、設計論述與建立信任之上。", "think": "說服不是壓制，而是替對方搭一座願意走過來的橋。", "mind": "說服老闆加薪、說服家人支持你的決定、推動一件提案，本質都是一連串的說服工程。", "speech": "說服的藝術與設計", "keyword": "說服", "oneline": "好的說服，是讓對方自己點頭。", "ext": [{"t": "影響力", "a": "羅伯特‧席爾迪尼", "w": "說服心理學經典"}, {"t": "鋪梗力", "a": "羅伯特‧席爾迪尼", "w": "說服前的鋪陳"}, {"t": "關鍵對話", "a": "科里‧派特森 等", "w": "高張力說服"}, {"t": "創意黏力學", "a": "奇普‧希思、丹‧希思", "w": "有黏性的論述"}, {"t": "跟TED學表達", "a": "卡曼‧蓋洛", "w": "有說服力的表達"}], "syn": {"pr": ["說服是讓對方自己想通", "理解對方先於陳述己見", "以信任為基礎"], "fw": "理解對方→設計論述→搭橋→促成的說服框架。", "st": ["先弄清楚對方真正在意什麼", "用對方的語言設計論述", "以共同利益建立信任", "給對方一個容易答應的下一步"], "lk": "歸入「簡報表達／影響力」節點；與《影響力》《上台的技術》串讀，把『說服原理』接到『表達技術』。", "sm": "好的說服，是讓對方自己點頭。"}, "beginner": false}];
+const CATS = ["簡報表達", "策略決策", "投資理財", "習慣行動", "人生哲學", "情緒心理", "領導團隊", "AI與數位", "自我成長", "時間管理", "認知洞察", "溝通人際", "商業組織"];
+const NODES = {"簡報表達": {"d": "把想法清楚傳達並說服他人的技術", "c": "#b5683f"}, "策略決策": {"d": "判斷局勢、取捨與提高勝率的思考", "c": "#5b6bb0"}, "投資理財": {"d": "長期、紀律與心態導向的財富累積", "c": "#4a8c6a"}, "習慣行動": {"d": "養成、精進與持續執行的行為改變", "c": "#c08a2e"}, "人生哲學": {"d": "意義、價值與面對有限人生的態度", "c": "#8a5caa"}, "情緒心理": {"d": "情緒辨識、調節與內在安定", "c": "#c25b7c"}, "領導團隊": {"d": "帶人、建立文化與長期經營", "c": "#3f7d8c"}, "AI與數位": {"d": "AI 趨勢、數位素養與生存策略", "c": "#6d6f8c"}, "自我成長": {"d": "潛能、韌性與大腦可塑的個人提升", "c": "#5a9e8f"}, "時間管理": {"d": "專注、減量與奪回時間主導權", "c": "#b08442"}, "認知洞察": {"d": "視野、觀察與判斷層次的提升", "c": "#7a6fb0"}, "溝通人際": {"d": "對話、同理與成熟的人際應對", "c": "#c2785b"}, "商業組織": {"d": "機制、專案與組織經營", "c": "#4f7a5a"}};
+const POS = {"策略決策": [620, 180], "認知洞察": [745, 300], "AI與數位": [790, 165], "商業組織": [560, 255], "領導團隊": [300, 200], "溝通人際": [155, 325], "簡報表達": [185, 150], "情緒心理": [300, 435], "人生哲學": [455, 330], "自我成長": [565, 435], "習慣行動": [670, 505], "時間管理": [470, 535], "投資理財": [450, 150]};
+const EDGES = [["策略決策", "認知洞察", 2, "好決策建立在看清局勢與判斷偏誤之上；認知層次決定策略品質。"], ["策略決策", "商業組織", 2, "策略要靠組織機制與專案執行才能真正落地。"], ["策略決策", "領導團隊", 1, "領導的核心工作之一，就是做關鍵取捨與資源配置。"], ["策略決策", "投資理財", 1, "投資本質是一連串的機率判斷與取捨，與決策同源。"], ["認知洞察", "自我成長", 2, "認知升級（視野、觀察、可塑性）是個人成長的引擎。"], ["認知洞察", "AI與數位", 1, "理解 AI 趨勢需要更高的判斷與洞察，避免被表象帶著走。"], ["領導團隊", "商業組織", 2, "領導力透過組織機制與文化，放大為組織整體戰力。"], ["領導團隊", "溝通人際", 2, "帶人先帶心，領導本質是高品質的人際與溝通。"], ["領導團隊", "人生哲學", 1, "以服務、意義與傳承為底的謙遜領導觀。"], ["領導團隊", "簡報表達", 1, "領導者需靠表達與說服凝聚共識、推動願景。"], ["溝通人際", "情緒心理", 2, "有效溝通的前提，是先辨識與承接情緒。"], ["溝通人際", "簡報表達", 2, "表達與說服，是人際溝通的進階應用。"], ["情緒心理", "自我成長", 2, "情緒調節與韌性，是個人成長的內在基礎。"], ["情緒心理", "人生哲學", 2, "安定心與面對無常，是情緒與人生觀的交會。"], ["人生哲學", "自我成長", 2, "釐清意義與價值，為成長指出方向。"], ["人生哲學", "時間管理", 2, "承認生命有限，才會有意識地分配時間。"], ["人生哲學", "投資理財", 1, "把金錢放進人生意義與多元財富的脈絡看待。"], ["習慣行動", "自我成長", 2, "成長靠日復一日的習慣與練習累積。"], ["習慣行動", "時間管理", 2, "習慣設計與時間管理，共用同一套行為機制。"], ["AI與數位", "商業組織", 1, "AI 與數位轉型，直接改寫組織的運作與競爭方式。"]];
+const PAINS = [{"q": "😵‍💫 總是拖延、三分鐘熱度", "b": ["原子習慣", "你和夢想之間，只差一個行動"]}, {"q": "😮‍💨 靜不下心、容易焦慮", "b": ["別對每件事都有反應", "為何一流的人不會有壓力"]}, {"q": "🧭 不知道人生方向", "b": ["你要如何衡量你的人生？", "我可能錯了"]}, {"q": "💰 想理財但不懂投資", "b": ["致富心態", "持續買進"]}, {"q": "📚 想把書讀得更快更有效", "b": ["刻意練習", "跨能致勝"]}, {"q": "👥 帶人、團隊帶不動", "b": ["教練", "帶人，先讀這本書"]}, {"q": "🎤 上台、表達會緊張", "b": ["上台的技術", "說服"]}, {"q": "💬 人際關係常卡關", "b": ["被討厭的勇氣", "不否定的練習"]}, {"q": "⏳ 時間總是不夠用", "b": ["生時間", "把時間買回來"]}, {"q": "🤖 對 AI 感到焦慮", "b": ["AI世界的底層邏輯與生存法則", "一本搞定ChatGPT"]}];
+const NB = {};
+CATS.forEach(c=>NB[c]=new Set([c]));
+EDGES.forEach(([a,b])=>{NB[a].add(b);NB[b].add(a);});
+const grid = document.getElementById('grid');
+const countEl = document.getElementById('count');
+let activeCat = 'ALL';
+let kw = '';
+let allOpen = false;
+let view = 'list';
+let beginnerOnly = false;
+
+// 安全儲存（朋友在自己的瀏覽器開啟可保存；預覽環境失敗則僅本次有效）
+const store = {
+  get(k){ try{return localStorage.getItem(k);}catch(e){return null;} },
+  set(k,v){ try{localStorage.setItem(k,v);}catch(e){} }
+};
+let readSet = new Set();
+try{ const r=store.get('rfn_read'); if(r) readSet=new Set(JSON.parse(r)); }catch(e){}
+function saveRead(){ store.set('rfn_read', JSON.stringify([...readSet])); updateReadCount(); }
+function updateReadCount(){ const el=document.getElementById('readCount'); if(el) el.textContent=readSet.size; }
+
+const esc = s => (s||'').replace(/[&<>]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
+
+function buildChips(){
+  const c = document.getElementById('chips');
+  const mk = (label,val)=>`<button class="chip ${val===activeCat?'on':''}" data-cat="${val}">${label}</button>`;
+  let h = mk('全部','ALL');
+  CATS.forEach(cat=>{ h += mk(cat,cat); });
+  c.innerHTML = h;
+  c.querySelectorAll('.chip').forEach(b=>b.onclick=()=>{activeCat=b.dataset.cat;beginnerOnly=false;buildChips();render();});
+}
+
+function recsHtml(b){
+  const items = b.ext.map((r,j)=>`
+    <div class="rec">
+      <div class="rk">${j+1}</div>
+      <div class="info">
+        <div class="rt">${esc(r.t)}</div>
+        <div class="ra">${esc(r.a)}</div>
+        <div class="rw">${esc(r.w)}</div>
+      </div>
+    </div>`).join('');
+  return `<div class="recs">
+    <div class="recs-hd">
+      <span class="ico"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5V6a2 2 0 0 1 2-2h12a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1H6a2 2 0 0 1-2-1.5z"/></svg></span>
+      <span class="t">一加五 · 延伸閱讀</span>
+      <span class="sub">依相關性與受益度排序</span>
+    </div>
+    <div class="reclist">${items}</div>
+  </div>`;
+}
+
+function synHtml(b){
+  const s = b.syn;
+  const pr = s.pr.map(p=>`<li>${esc(p)}</li>`).join('');
+  const st = s.st.map(a=>`<div class="ck"><span class="box"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3.5"><path d="M5 12l5 5L20 6"/></svg></span><span class="txt">${esc(a)}</span></div>`).join('');
+  return `<div class="syn">
+    <div class="syn-top">
+      <span class="ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="12" r="3"/><path d="M8.7 7.5l6.6 3M8.7 16.5l6.6-3"/></svg></span>
+      <span class="st-t">串聯式閱讀</span>
+      <span class="st-s">原則 · 框架 · 行動 · 串聯</span>
+    </div>
+    <div class="syn-body">
+      <div class="syn-grid">
+        <div class="syn-card">
+          <div class="h"><b>核心原則</b><span class="en">PRINCIPLES</span></div>
+          <ul class="syn-pr">${pr}</ul>
+        </div>
+        <div class="syn-card">
+          <div class="h"><b>思考框架</b><span class="en">FRAMEWORK</span></div>
+          <div class="syn-fw"><span class="badge">要建立的思維</span><br>${esc(s.fw)}</div>
+        </div>
+      </div>
+      <div class="syn-act">
+        <div class="h"><b>可立即實作的行動清單</b><span class="en">ACTION</span></div>
+        <div class="checks">${st}</div>
+      </div>
+      <div class="syn-link">
+        <span class="h">串聯閱讀點 · 如何快速理解 / 比較 / 整合</span>${esc(s.lk)}
+      </div>
+      <div class="syn-sum"><span class="k">一句話核心</span><span class="v">${esc(s.sm)}</span></div>
+    </div>
+  </div>`;
+}
+
+function card(b,i){
+  const beg = b.beginner ? '<span class="begtag">🔰 新手推薦</span>' : '';
+  const isRead = readSet.has(b.name);
+  return `<div class="book${isRead?' read':''}" data-i="${i}" data-name="${esc(b.name)}">
+    <div class="bhead">
+      <div class="bnum">${String(i+1).padStart(2,'0')}</div>
+      <div class="bmain">
+        <div class="btitle">${esc(b.name)}</div>
+        <div class="bauthor">${esc(b.author)}</div>
+        <span class="btag">${esc(b.cat)}</span>${beg}
+        <div class="bcore">${esc(b.core)}</div>
+      </div>
+      <button class="readtag" title="標記讀過">${isRead?'✓ 讀過':'＋ 讀過'}</button>
+      <svg class="chev" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+    </div>
+    <div class="body"><div class="body-inner">
+      <div class="stages">
+        <div class="stage s1">
+          <div class="shd"><span class="sno">壹</span><span class="snm">閱讀</span><span class="seng">READ</span></div>
+          <div class="row"><span class="lbl">核心內容</span>${esc(b.core)}</div>
+          <div class="row"><span class="lbl">關鍵句</span><span class="quote">「${esc(b.key)}」</span></div>
+          <div class="row"><span class="lbl">作者主張</span>${esc(b.claim)}</div>
+        </div>
+        <div class="stage s2">
+          <div class="shd"><span class="sno">貳</span><span class="snm">思考</span><span class="seng">THINK</span></div>
+          <div class="row"><span class="lbl">我的想法（反思起點）</span>${esc(b.think)}</div>
+        </div>
+        <div class="stage s3">
+          <div class="shd"><span class="sno">參</span><span class="snm">思維擴張</span><span class="seng">MIND</span></div>
+          <div class="row"><span class="lbl">意識轉變與延伸</span>${esc(b.mind)}</div>
+        </div>
+        <div class="stage s4">
+          <div class="shd"><span class="sno">肆</span><span class="snm">總結</span><span class="seng">SUMMARY</span></div>
+          <div class="row"><span class="lbl">演講題目</span>${esc(b.speech)}</div>
+          <div class="row"><span class="lbl">一個關鍵字</span><span class="pill">${esc(b.keyword)}</span></div>
+          <div class="row"><span class="lbl">一句話總結</span>${esc(b.oneline)}</div>
+        </div>
+      </div>
+      ${synHtml(b)}
+      ${recsHtml(b)}
+    </div></div>
+  </div>`;
+}
+
+function matches(b){
+  const k = kw.trim().toLowerCase();
+  if(beginnerOnly && !b.beginner) return false;
+  const okCat = activeCat==='ALL' || b.cat===activeCat;
+  const extStr = b.ext.map(r=>r.t+r.a+r.w).join('');
+  const synStr = b.syn.pr.join('')+b.syn.fw+b.syn.st.join('')+b.syn.lk+b.syn.sm;
+  const hay = (b.name+b.author+b.cat+b.core+b.key+b.claim+b.keyword+b.speech+b.oneline+extStr+synStr).toLowerCase();
+  return okCat && (!k || hay.includes(k));
+}
+
+function bindCards(){
+  grid.querySelectorAll('.bhead').forEach(h=>{
+    h.onclick = ()=> h.parentElement.classList.toggle('open');
+  });
+  grid.querySelectorAll('.ck').forEach(c=>{
+    c.onclick = (e)=>{ e.stopPropagation(); c.classList.toggle('done'); };
+  });
+  grid.querySelectorAll('.readtag').forEach(btn=>{
+    btn.onclick = (e)=>{
+      e.stopPropagation();
+      const bk = btn.closest('.book'); const nm = bk.dataset.name;
+      if(readSet.has(nm)){ readSet.delete(nm); bk.classList.remove('read'); btn.textContent='＋ 讀過'; }
+      else { readSet.add(nm); bk.classList.add('read'); btn.textContent='✓ 讀過'; }
+      saveRead();
+    };
+  });
+}
+
+function drillToBook(name){
+  view='list'; setToggle(); activeCat='ALL'; kw=name; beginnerOnly=false;
+  document.getElementById('q').value=name; buildChips();
+  renderList(BOOKS.filter(matches));
+  const target = [...grid.querySelectorAll('.book')].find(x=>x.dataset.name===name);
+  if(target){ target.classList.add('open'); target.scrollIntoView({behavior:'smooth',block:'start'}); }
+}
+
+function renderList(list){
+  grid.classList.remove('mapmode');
+  if(!list.length){ grid.innerHTML = '<div class="empty">沒有符合的書，試試其他關鍵字或主題。</div>'; return; }
+  grid.innerHTML = list.map((b)=>card(b, BOOKS.indexOf(b))).join('');
+  if(allOpen) grid.querySelectorAll('.book').forEach(el=>el.classList.add('open'));
+  bindCards();
+}
+
+function renderMap(list){
+  grid.classList.add('mapmode');
+  if(!list.length){ grid.innerHTML = '<div class="empty">沒有符合的書，試試其他關鍵字或主題。</div>'; return; }
+  const cats = CATS.filter(c=>activeCat==='ALL'||c===activeCat);
+  let html = '';
+  let shownNodes = 0;
+  cats.forEach(cat=>{
+    const items = list.filter(b=>b.cat===cat);
+    if(!items.length) return;
+    shownNodes++;
+    const meta = NODES[cat] || {d:'',c:'#999'};
+    const books = items.map(b=>{
+      const gi = BOOKS.indexOf(b);
+      return `<button class="nbook" data-name="${esc(b.name)}">
+        <span class="ni">${String(gi+1).padStart(2,'0')}</span>
+        <span class="nbi"><span class="nbt">${esc(b.name)}</span><span class="nba">${esc(b.author)}</span></span>
+      </button>`;
+    }).join('');
+    html += `<div class="node" style="--ndot:${meta.c}">
+      <div class="node-hd">
+        <div class="node-top"><span class="node-dot"></span><span class="node-nt">${esc(cat)}</span><span class="node-nc">${items.length} 本</span></div>
+        <div class="node-nd">${esc(meta.d)}</div>
+      </div>
+      <div class="node-books">${books}</div>
+    </div>`;
+  });
+  html += `<div class="node-sum">共 ${shownNodes} 個知識節點 · ${list.length} 本書　·　點任一本即可跳至該書卡片</div>`;
+  grid.innerHTML = html;
+  grid.querySelectorAll('.nbook').forEach(el=>{
+    el.onclick = ()=> drillToBook(el.dataset.name);
+  });
+}
+
+function nodeRadius(cnt){ return 15 + cnt*1.35; }
+
+function renderGraph(){
+  grid.classList.remove('mapmode'); grid.classList.add('graphmode');
+  const counts = {};
+  CATS.forEach(c=>counts[c]=BOOKS.filter(b=>b.cat===c).length);
+  const VB_W=920, VB_H=660;
+
+  let edgeSvg = '';
+  EDGES.forEach(([a,b,w,why],idx)=>{
+    const [x1,y1]=POS[a], [x2,y2]=POS[b];
+    const mx=(x1+x2)/2, my=(y1+y2)/2;
+    const dx=x2-x1, dy=y2-y1;
+    const off=0.07;
+    const cx=mx - dy*off, cy=my + dx*off;
+    const sw = w===2 ? 2.8 : 1.6;
+    const d = `M${x1} ${y1} Q ${cx.toFixed(1)} ${cy.toFixed(1)} ${x2} ${y2}`;
+    edgeSvg += `<path class="gedge" data-a="${esc(a)}" data-b="${esc(b)}" data-idx="${idx}" d="${d}" stroke-width="${sw}" opacity="0.42"/>`;
+    edgeSvg += `<path class="ghit" data-idx="${idx}" d="${d}"/>`;
+  });
+
+  let nodeSvg = '';
+  CATS.forEach(c=>{
+    const [x,y]=POS[c]; const r=nodeRadius(counts[c]); const col=NODES[c].c;
+    nodeSvg += `<g class="gnode" data-cat="${esc(c)}">
+      <circle cx="${x}" cy="${y}" r="${r}" fill="${col}"/>
+      <text class="gcount" x="${x}" y="${y}" font-size="${(r*0.78).toFixed(0)}">${counts[c]}</text>
+      <text class="glabel" x="${x}" y="${y+r+16}">${esc(c)}</text>
+    </g>`;
+  });
+
+  grid.innerHTML = `<div class="graphwrap">
+    <svg viewBox="0 0 ${VB_W} ${VB_H}" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="知識節點關聯地圖">
+      <g class="edges">${edgeSvg}</g>
+      <g class="nodes">${nodeSvg}</g>
+    </svg>
+    <div class="graph-legend">
+      <span class="lg"><span class="lc"></span>圓圈大小＝該節點書數</span>
+      <span class="lg"><span class="ln"></span>強關聯</span>
+      <span class="lg"><span class="ln med"></span>中關聯</span>
+    </div>
+    <div class="edge-info" id="edgeInfo"><span class="ei-empty">點任一條關聯線，看兩個節點為何相關；滑入節點可 highlight 其關聯。</span></div>
+  </div>
+  <div class="graph-hint"><b>點節點</b>進入該節點總覽　·　<b>點關聯線</b>看連結說明</div>`;
+
+  const svg = grid.querySelector('svg');
+  const nodeEls = [...svg.querySelectorAll('.gnode')];
+  const edgeEls = [...svg.querySelectorAll('.gedge')];
+  const hitEls = [...svg.querySelectorAll('.ghit')];
+  const infoEl = grid.querySelector('#edgeInfo');
+  let selEdge = null;
+
+  function clearAll(){
+    svg.classList.remove('focusing');
+    nodeEls.forEach(n=>n.classList.remove('dim'));
+    edgeEls.forEach(e=>e.classList.remove('hot','dim'));
+  }
+  function focusNodes(set, hotIdx){
+    svg.classList.add('focusing');
+    nodeEls.forEach(n=> n.classList.toggle('dim', !set.has(n.dataset.cat)) );
+    edgeEls.forEach((e,i)=>{
+      const on = (hotIdx!=null) ? (i===hotIdx)
+               : (set.has(e.dataset.a)&&set.has(e.dataset.b));
+      e.classList.toggle('hot', on);
+      e.classList.toggle('dim', !on);
+    });
+  }
+  function applySel(){
+    if(selEdge==null){ clearAll(); return; }
+    const [a,b]=EDGES[selEdge];
+    focusNodes(new Set([a,b]), selEdge);
+  }
+  function showInfo(idx){
+    const [a,b,w,why]=EDGES[idx];
+    const ca=NODES[a].c, cb=NODES[b].c;
+    infoEl.classList.add('active');
+    infoEl.innerHTML = `
+      <div class="ei-pair">
+        <span class="ei-chip"><span class="dot" style="background:${ca}"></span>${esc(a)}</span>
+        <span class="ei-link">↔</span>
+        <span class="ei-chip"><span class="dot" style="background:${cb}"></span>${esc(b)}</span>
+      </div>
+      <div class="ei-why"><span class="wlbl">為何相關</span>${esc(why)}</div>
+      <span class="ei-strength">${w===2?'強關聯':'中關聯'}</span>`;
+  }
+
+  nodeEls.forEach(n=>{
+    const cat=n.dataset.cat;
+    n.addEventListener('mouseenter',()=>focusNodes(NB[cat]));
+    n.addEventListener('mouseleave',applySel);
+    n.addEventListener('click',()=>{
+      view='map'; setToggle(); activeCat=cat; kw='';
+      document.getElementById('q').value=''; buildChips(); render();
+      grid.scrollIntoView({behavior:'smooth',block:'start'});
+    });
+  });
+  hitEls.forEach(h=>{
+    const idx=+h.dataset.idx;
+    const [a,b]=EDGES[idx];
+    h.addEventListener('mouseenter',()=>focusNodes(new Set([a,b]), idx));
+    h.addEventListener('mouseleave',applySel);
+    h.addEventListener('click',(e)=>{ e.stopPropagation(); selEdge=idx; applySel(); showInfo(idx); });
+  });
+  svg.addEventListener('click',(e)=>{
+    if(!e.target.closest('.ghit') && !e.target.closest('.gnode')){
+      selEdge=null; applySel();
+      infoEl.classList.remove('active');
+      infoEl.innerHTML='<span class="ei-empty">點任一條關聯線，看兩個節點為何相關；滑入節點可 highlight 其關聯。</span>';
+    }
+  });
+
+  if(activeCat!=='ALL') focusNodes(NB[activeCat]);
+  countEl.textContent = CATS.length;
+}
+
+function render(){
+  const list = BOOKS.filter(matches);
+  const unit = document.getElementById('unit');
+  document.getElementById('toggleAll').style.display = (view==='list') ? '' : 'none';
+  if(view==='graph'){
+    grid.classList.remove('mapmode');
+    renderGraph();
+    countEl.textContent = CATS.length;
+    if(unit) unit.textContent = '個節點 · '+EDGES.length+' 條關聯';
+    return;
+  }
+  grid.classList.remove('graphmode');
+  if(unit) unit.textContent = '本';
+  countEl.textContent = list.length;
+  if(view==='map') renderMap(list);
+  else renderList(list);
+}
+
+function setToggle(){
+  document.querySelectorAll('.vt').forEach(b=>b.classList.toggle('on', b.dataset.view===view));
+}
+
+document.getElementById('q').addEventListener('input',e=>{kw=e.target.value;beginnerOnly=false;render();});
+document.getElementById('toggleAll').onclick=()=>{allOpen=!allOpen;render();};
+document.querySelectorAll('.vt').forEach(b=>b.onclick=()=>{view=b.dataset.view;setToggle();render();});
+
+// 🎲 隨機抽書
+document.getElementById('randomBtn').onclick=()=>{
+  const b=BOOKS[Math.floor(Math.random()*BOOKS.length)];
+  drillToBook(b.name);
+};
+// 🔰 新手先讀 8 本
+document.getElementById('beginnerBtn').onclick=()=>{
+  view='list'; setToggle(); activeCat='ALL'; kw=''; beginnerOnly=true;
+  document.getElementById('q').value=''; buildChips(); render();
+  grid.scrollIntoView({behavior:'smooth',block:'start'});
+};
+// 🎯 痛點配書
+const painBox=document.getElementById('painBox');
+const painOpts=document.getElementById('painOpts');
+const painResult=document.getElementById('painResult');
+painOpts.innerHTML = PAINS.map((p,i)=>`<button class="pain-opt" data-i="${i}">${esc(p.q)}</button>`).join('');
+document.getElementById('painBtn').onclick=()=>{
+  painBox.hidden=!painBox.hidden;
+  if(!painBox.hidden) painBox.scrollIntoView({behavior:'smooth',block:'nearest'});
+};
+painOpts.querySelectorAll('.pain-opt').forEach(o=>{
+  o.onclick=()=>{
+    painOpts.querySelectorAll('.pain-opt').forEach(x=>x.classList.remove('on'));
+    o.classList.add('on');
+    const p=PAINS[+o.dataset.i];
+    const cards=p.b.map(nm=>{
+      const bk=BOOKS.find(x=>x.name===nm); if(!bk) return '';
+      return `<button class="pr-book" data-name="${esc(nm)}">
+        <span class="prt">${esc(bk.name)}</span>
+        <span class="pra">${esc(bk.author)}</span>
+        <span class="prc">${esc(bk.core)}</span>
+      </button>`;
+    }).join('');
+    painResult.innerHTML = `<div class="pr-lbl">📖 推薦你讀（點開看四階段重點）</div><div class="pr-books">${cards}</div>`;
+    painResult.hidden=false;
+    painResult.querySelectorAll('.pr-book').forEach(el=> el.onclick=()=>drillToBook(el.dataset.name));
+  };
+});
+// 字級
+document.querySelectorAll('.fb').forEach(b=>b.onclick=()=>{
+  let fs=+(store.get('rfn_fs')||0); fs=Math.max(0,Math.min(2,fs+ (+b.dataset.fs)));
+  applyFs(fs); store.set('rfn_fs',fs);
+});
+function applyFs(fs){
+  document.documentElement.classList.remove('fs1','fs2');
+  if(fs>=1) document.documentElement.classList.add('fs'+fs);
+}
+applyFs(+(store.get('rfn_fs')||0));
+
+buildChips();
+render();
+updateReadCount();
+</script>
+</body>
+</html>
